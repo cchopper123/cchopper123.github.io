@@ -6,15 +6,20 @@ body {
     color: #53a7ac;
     font-family: arial;
 }
+
+#violet {
+    background:plum;
+}
 #all-contents {
-  max-width: 800px;
-    margin: auto;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* navigation menu */
 nav {
     background: #AC5853;
-   margin: 0 auto;
+    margin: 0 auto;
+    margin-bottom: 20px;
     display: flex;
     padding: 10px;
 }
@@ -60,6 +65,45 @@ main {
     border: 4px silver ridge;
     padding: 8px;
 }
+
 h2, h3 {
     margin: 0px;
 }
+
+li{
+    font-family:'Sixtyfour', sans-serif;;
+    margin: 0;
+    font-size: 30px;
+    color:palevioletred;
+}
+
+/* portfolio styles */
+.content h1 {
+    color: black;
+}
+
+#portfolio {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#portfolio li {
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#portfolio li:hover {
+    background: #eee;
+}
+
+#portfolio a {
+    text-decoration: none;
+    color: #454545;
+}
+
+h2{
+    text-align: center;
+}
+
