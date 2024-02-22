@@ -20,6 +20,22 @@ $(function () {
     createPlatform(-50, canvas.height - 10, canvas.width + 100, 200); //right
     createPlatform(-50, -50, 50, canvas.height + 500); //bottom
     createPlatform(canvas.width, -50, 50, canvas.height + 100);
+    createPlatform(200,620,100,10);
+    createPlatform(400,520,100,3);
+    createPlatform(600,420,100,3);
+    createPlatform(800,320,100,3);
+    createPlatform(1000,220,100,3);
+    createCollectable("max", 900, 600);
+    createCollectable("max", 200, 100);
+    createCollectable("steve", 1000, 50);
+    createCollectable("grace", 600, 150);
+    createCollectable("kennedi", 800, 200);
+    createCannon("left", 500, 1000)
+    createCannon("right", 300, 1000)
+    createCannon("left", 200, 1000)
+    createCannon("right", 200, 1000)
+    createCannon("right", 100, 1000)
+    
 
     /**
      * Uncomment the loops below to add a "grid" to your platformer game's screen
