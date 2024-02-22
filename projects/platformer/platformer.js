@@ -29,12 +29,12 @@ $(function () {
     createCollectable("max", 200, 100);
     createCollectable("steve", 1000, 50);
     createCollectable("grace", 600, 150);
-    createCollectable("kennedi", 800, 200);
+    createCollectable("grace", 800, 200);
     createCannon("left", 500, 1000)
-    createCannon("right", 300, 1000)
+    createCannon("right", 400, 1000)
     createCannon("left", 200, 1000)
     createCannon("right", 200, 1000)
-    createCannon("right", 100, 1000)
+    createCannon("right", 50, 1000)
     
 
     /**
