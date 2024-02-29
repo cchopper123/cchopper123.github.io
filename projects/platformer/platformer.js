@@ -24,17 +24,20 @@ $(function () {
     createPlatform(400,520,100,3);
     createPlatform(600,420,100,3);
     createPlatform(800,320,100,3);
-    createPlatform(1000,220,100,3);
+    createPlatform(1000,250,100,3);
     createCollectable("max", 900, 600);
     createCollectable("max", 200, 100);
     createCollectable("steve", 1000, 50);
     createCollectable("grace", 600, 150);
     createCollectable("grace", 800, 200);
-    createCannon("left", 500, 1000)
-    createCannon("right", 400, 1000)
-    createCannon("left", 200, 1000)
-    createCannon("right", 200, 1000)
-    createCannon("right", 50, 1000)
+    createCollectable("max", 640, 150);
+    createCollectable("max", 440, 150);
+    createCannon("left", 200, 1000);
+    createCannon("right", 550, 1000);
+    createCannon("left", 100, 1000);
+    createCannon("right", 790, 1000);
+    createCannon("right", 100, 1000);
+    createCollectable("steve", 1300, 50);
     
 
     /**
