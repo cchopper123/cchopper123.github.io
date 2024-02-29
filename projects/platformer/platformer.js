@@ -28,8 +28,10 @@ $(function () {
     createCollectable("max", 900, 600);
     createCollectable("max", 200, 100);
     createCollectable("steve", 1000, 50);
+    createCollectable("steve", 1030, 30);
     createCollectable("grace", 600, 150);
-    createCollectable("grace", 800, 200);
+    createCollectable("grace", 800, 100);
+    createCollectable("grace", 860, 200);
     createCollectable("max", 640, 150);
     createCollectable("max", 440, 150);
     createCannon("left", 200, 1000);
@@ -38,6 +40,11 @@ $(function () {
     createCannon("right", 790, 1000);
     createCannon("right", 100, 1000);
     createCollectable("steve", 1300, 50);
+    createCollectable("steve", 1200, 50);
+    createCollectable("steve", 1100, 50);
+    createCollectable("max", 500, 600);
+    createCollectable("max", 600, 800);
+    createCollectable("max", 650, 800);
     
 
     /**
