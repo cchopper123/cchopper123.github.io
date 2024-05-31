@@ -24,6 +24,7 @@ var background = function (window) {
         
         // container which will be returned
         var background;
+        var tree;
         
         //////////////////////////////////////////////////////////////////
         // ANIMATION VARIABLES HERE //////////////////////////////////////
@@ -57,7 +58,7 @@ var background = function (window) {
             
             
             // TODO 3: Part 1 - Add a tree
-            var tree = draw.bitmap("img/tree.png")
+            tree = draw.bitmap("img/tree.png")
             tree.x= 850;
             tree.y = groundY + 20;
             background.addChild(tree);
@@ -76,7 +77,7 @@ var background = function (window) {
             
             // TODO 3: Part 2 - Move the tree!
             function move_tree(){
-                tree.x = tree.x +1;
+                tree.x = tree.x - 1;
                 if (tree.x < -200){
                     tree.x = canvasWidth;
                 }
