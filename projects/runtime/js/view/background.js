@@ -46,6 +46,13 @@ var background = function (window) {
             // TODO 2: - Add a moon and starfield
             var moon = draw.circle(200, "white", "white", 3);
             background.addChild(moon);
+            
+            for (let i = 0; i <= 20; i++){
+                var circle = draw.circle(2, "white", "LightGray", 1);
+                circle.x = canvasWidth * Math.random();
+                circle.y = groundY * Math.random();
+                background.addChild(circle);
+            }
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
             
