@@ -58,7 +58,7 @@ var background = function (window) {
             
             // TODO 3: Part 1 - Add a tree
             var tree = draw.bitmap("img/tree.png")
-            tree.x = 750;
+            tree.x= 850;
             tree.y = groundY + 20;
             background.addChild(tree);
             
@@ -75,11 +75,13 @@ var background = function (window) {
             var groundY = ground.y;
             
             // TODO 3: Part 2 - Move the tree!
-            tree.x = tree.x +1;
-            if (tree.x < -200){
-                tree.x = canvasWidth;
+            function move_tree(){
+                tree.x = tree.x +1;
+                if (tree.x < -200){
+                    tree.x = canvasWidth;
+                }
             }
-  
+            move_tree();
             // TODO 4: Part 2 - Parallax
             
 
