@@ -39,12 +39,9 @@ $(document).ready(function () {
  // TODO 0 Complete
   // TODO 1: create a new shape object and add it to the array
   var shape={
-    key:color,
-    value:"blue",
-    key:shape,
-    value:"circle",
-    key:repeat,
-    value:3
+    color:"blue",
+    shape:"circle",
+    repeat:3
 
   }
   dataShapes.push(shape);
