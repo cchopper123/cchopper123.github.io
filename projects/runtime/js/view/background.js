@@ -43,7 +43,7 @@ var background = function (window) {
             // you should modify both the height and color to suit your game
             var backgroundFill = draw.rect(canvasWidth,canvasHeight,'gray');
             background.addChild(backgroundFill);
-            var sky = draw.rect(canvasWidth, 400, "#031245", 8, 3);
+            var sky = draw.rect(canvasWidth, groundY, "#031245", 8, 3);
             background.addChild(sky);
             // TODO 2: - Add a moon and starfield
             var moon = draw.circle(200, "white", "white", 3);
@@ -56,10 +56,10 @@ var background = function (window) {
                 background.addChild(circle);
             }
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-            for (var i = 0; i < 5; ++i) {
-                var buildingHeight = 500 * Math.random();
+            for (var i = 0; i < 6; ++i) {
+                var buildingHeight = canvasHeight * Math.random();
                 var building = draw.rect(85, buildingHeight, "LightGray", "Black", 1);
-                building.x = 300 * i;
+                building.x = 200 * i;
                 building.y = groundY - buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
@@ -93,13 +93,16 @@ var background = function (window) {
             move_tree();
             // TODO 4: Part 2 - Parallax
             function move_buildings(){
+                
+                for (var i=0; i < buildings.length; i++){
                 buildings.x = buildings.x - 1;
-                if (buildings.x < -200){
-                    buildings.x = canvasWidth;
+                var building = buildings[i]
+                if (building.x < -200){
+                    building.x = canvasWidth;
                 }
             }
-            for (var i=0; i < buildings.length; i++){
-                var building = buildings[i]
+            
+                
             }
             move_buildings();
 
