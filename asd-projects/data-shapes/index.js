@@ -51,13 +51,13 @@ $(document).ready(function () {
     var currentShape=[ ];
     currentShape.push(dataShapes);
   if (color="red"){
-    currentShape.push(goodBehavior, "bounce");
+    currentShape.goodBehavior("bounce");
   }
   if (color="blue"){
-    currentShape.push(goodBehavior, "blink");
+    currentShape.goodBehavior("blink");
   }
   else{
-    currentShape.push(goodBehavior, 'spin');
+    currentShape.goodBehavior('spin');
   }
   }
   // TODO 3-a: add a function that handles the static display type
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
   function staticDisplay() {
     // TODO 3-b: call your handleStatic function
-    handleStatic();
+    handleStatic(color);
   }
 
   function goodDisplay() {
