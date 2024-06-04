@@ -42,7 +42,6 @@ $(document).ready(function () {
     color:"blue",
     shape:"circle",
     repeat:3
-
   }
   dataShapes.push(shape);
 
