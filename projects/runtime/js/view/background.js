@@ -56,7 +56,7 @@ var background = function (window) {
                 background.addChild(circle);
             }
             // TODO 4: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
-            for (var i = 0; i < 6; ++i) {
+            for (var i = 0; i < 5; ++i) {
                 var buildingHeight = groundY * Math.random();
                 var building = draw.rect(85, buildingHeight, "LightGray", "Black", 1);
                 building.x = 200 * i;
@@ -95,8 +95,7 @@ var background = function (window) {
             function move_buildings(){
                 for (var i=0; i < buildings.length; i++){
                 var building = buildings[i]
-                buildings.x = buildings.x - 1;
-                
+                building.x = building.x - 1;
                 if (building.x < -200){
                     building.x = canvasWidth;
                 }
