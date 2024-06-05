@@ -109,9 +109,9 @@ function update(){
 
 // this moves circles in memory but doesn't update them on the screen
 function moveCircle(circle){
-    debugger;
     circle.x += circle.speedX;
     circle.y += circle.speedY;
+    
 }
 
 // this bounces circles if they hit a wall
@@ -134,8 +134,9 @@ function bounceCircle(circle){
     }
     // this bounces off the bottom wall
     else if (circle.y > boardHeight){
+        // debugger;
         circle.y -= circle.speedY;
-        circle.speedX *= -1;
+        circle.speedY *= -1;
     }
 }
 
