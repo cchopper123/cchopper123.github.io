@@ -90,7 +90,6 @@ function update(){
     // to make seeing issues in the debugger slightly easier (in practice, you should use
     // circles.length, but do NOT change it here)
     for (var i = 0; i < maxCircles; i++){
-        debugger;
         var circle = circles[i];
 
         // move the circle
@@ -110,6 +109,7 @@ function update(){
 
 // this moves circles in memory but doesn't update them on the screen
 function moveCircle(circle){
+    debugger;
     circle.x += circle.speedX;
     circle.y += circle.speedY;
 }
