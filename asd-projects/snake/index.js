@@ -175,6 +175,10 @@ function hasHitWall() {
 }
 
 function hasCollidedWithApple() {
+  if (snake.head.row === apple.row || snake.head.column === apple.column){
+    return true
+  }
+
   /* 
   TODO 9: Should return true if the snake's head has collided with the apple, 
   false otherwise
