@@ -24,6 +24,8 @@ var runLevels = function (window) {
     sawBladeHitZone.x = 400;
     sawBladeHitZone.y = 350;
     game.addGameItem(sawBladeHitZone);
+    var obstacleImage = draw.bitmap("img/sawblade.png");
+    sawBladeHitZone.addChild(obstacleImage);
 
     function startLevel() {
       // TODO 13 goes below here
