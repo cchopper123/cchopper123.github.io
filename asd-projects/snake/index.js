@@ -43,7 +43,6 @@ init();
 
 function init() {
   // TODO 4c-2: initialize the snake
-  debugger;
   snake.body = [];
 
   // make the first snakeSquare and set it as the head
@@ -87,10 +86,19 @@ function checkForNewDirection(event) {
   if (activeKey === KEY.LEFT) {
     snake.head.direction = "left";
   }
+  if (activeKey === KEY.RIGHT) {
+    snake.head.direction = "right";
+  }
+  if (activeKey === KEY.UP) {
+    snake.head.direction = "up";
+  }
+  if (activeKey === KEY.DOWN) {
+    snake.head.direction = "down";
+  }
 
   // FILL IN THE REST
 
-  console.log(snake.head.direction);     // uncomment me!
+  //console.log(snake.head.direction);     // uncomment me!
 }
 
 function moveSnake() {
