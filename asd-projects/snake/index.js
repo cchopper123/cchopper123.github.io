@@ -102,6 +102,7 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
+  
   /* 
   TODO 11: Move each part of the snake's body such that it's body follows the head.
   
@@ -144,16 +145,19 @@ function moveSnake() {
 
 function hasHitWall() {
   if (snake.head.column > COLUMNS){
-    console.log("hit right wall");
-    //return true
+    return true
   }
-  if (snake.head.column < ROWS){
+  if (snake.head.column < 0){
+    return true
     
   }
   if (snake.head.row > ROWS){
-    console.log("hit down wall");
-    //return true
+    return true
 
+  }
+  if (snake.head.row < 0){
+    return true
+  
   }
 
   /* 
