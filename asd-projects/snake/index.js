@@ -198,6 +198,22 @@ function handleAppleCollision() {
   apple.element.remove();
   makeApple();
 
+  if (snake.tail.direction === "right"){
+    snake.tail.row = snake.tail.row + 1;
+    console.log("left");
+  }
+  if (snake.tail.direction === "left"){
+    snake.tail.row = snake.tail.row + 1;
+    console.log("right");
+  }
+  if (snake.tail.direction === "up"){
+    snake.tail.row = snake.tail.row + 1;
+    console.log("down");
+  }
+  if (snake.tail.direction === "down"){
+    snake.tail.row = snake.tail.row + 1;
+    console.log("up");
+  }
   /* 
   TODO 10: determine the location of the next snakeSquare based on the .row,
   .column and .direction properties of the snake.tail snakeSquare
