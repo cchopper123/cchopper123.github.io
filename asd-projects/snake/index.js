@@ -175,7 +175,7 @@ function hasHitWall() {
 }
 
 function hasCollidedWithApple() {
-  if (snake.head.row === apple.row || snake.head.column === apple.column){
+  if (snake.head.row === apple.row && snake.head.column === apple.column){
     return true
   }
 
