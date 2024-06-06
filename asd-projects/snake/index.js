@@ -143,12 +143,29 @@ function moveSnake() {
 }
 
 function hasHitWall() {
+  if (snake.head.column > COLUMNS){
+    console.log("hit right wall");
+    //return true
+  }
+  if (snake.head.column < ROWS){
+    
+  }
+  if (snake.head.row > ROWS){
+    console.log("hit down wall");
+    //return true
+
+  }
+
   /* 
   TODO 8: Should return true if the snake's head has collided with the four walls of the
   board, false otherwise.
   
   HINT: What will the row and column of the snake's head be if this were the case?
   */
+  ROWS; // the total number of ROWS in the board
+  COLUMNS; // the total number of COLUMNS in the board
+  snake.head.row; // the current row of snake.head
+  snake.head.column; // the current column of snake.head
 
   return false;
 }
