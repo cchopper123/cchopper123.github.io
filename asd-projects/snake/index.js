@@ -103,6 +103,20 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
+  for (var i=0; i>3; i++){
+    var snakeSquare = "???";
+
+    var nextSnakeSquare = "???";
+    var nextRow = "???";
+    var nextColumn = "???";
+    var nextDirection = "???";
+
+    snakeSquare.direction = nextDirection;
+    snakeSquare.row = nextRow;
+    snakeSquare.column = nextColumn;
+    repositionSquare(snakeSquare);
+}
+  
   
   /* 
   TODO 11: Move each part of the snake's body such that it's body follows the head.
@@ -203,22 +217,22 @@ function handleAppleCollision() {
   if (snake.tail.direction === "right"){
     console.log(snake.tail.direction);
     console.log("left");
-    makeSnakeSquare(snake.head.row + 1);
+    makeSnakeSquare(snake.head.row, snake.head.column-1);
   }
   if (snake.tail.direction === "left"){
     console.log(snake.tail.direction);
     console.log("right");
-    makeSnakeSquare(snake.tail.row - 1);
+    makeSnakeSquare(snake.head.row, snake.head.column+1);
   }
   if (snake.tail.direction === "up"){
     console.log(snake.tail.direction);
     console.log("down");
-    makeSnakeSquare(snake.tail.column + 1);
+    makeSnakeSquare(snake.head.row + 1 , snake.head.column);
   }
   if (snake.tail.direction === "down"){
     console.log(snake.tail.direction);
     console.log("up");
-    makeSnakeSquare(snake.tail.column - 1);
+    makeSnakeSquare(snake.head.row - 1, snake.head.column);
   }
   /* 
   TODO 10: determine the location of the next snakeSquare based on the .row,
@@ -234,7 +248,7 @@ function handleAppleCollision() {
 
   // code to determine the row and column of the snakeSquare to add to the snake
 
-  makeSnakeSquare(row, column);
+  //makeSnakeSquare(row, column);
 }
 
 function hasCollidedWithSnake() {
