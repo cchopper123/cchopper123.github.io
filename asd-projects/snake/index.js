@@ -145,6 +145,7 @@ function moveSnake() {
 
 function hasHitWall() {
   if (snake.head.column > COLUMNS){
+    
     return true
   }
   if (snake.head.column < 0){
@@ -199,11 +200,11 @@ function handleAppleCollision() {
   makeApple();
 
   if (snake.tail.direction === "right"){
-    snake.tail.row = snake.tail.row + 1;
+    snake.tail.column = snake.tail.column + 1;
     console.log("left");
   }
   if (snake.tail.direction === "left"){
-    snake.tail.row = snake.tail.row + 1;
+    snake.tail.column = snake.tail.column + 1;
     console.log("right");
   }
   if (snake.tail.direction === "up"){
