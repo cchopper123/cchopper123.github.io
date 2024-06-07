@@ -11,7 +11,7 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
-//var snakedefault = (row)
+var snakedefault;
 var snake =[ ];
 var apple = [ ];
 var score = 0;
@@ -265,6 +265,7 @@ function hasCollidedWithSnake() {
 }
 
 function endGame() {
+  snakedefault = (10, 10)
   // stop update function from running
   clearInterval(updateInterval);
 
