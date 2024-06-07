@@ -104,13 +104,13 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
-  for (var i=0; i>snake.body.length; i++){
+  for (var i = 1; i > snake.body.length; i++){
     var snakeSquare = snake.head.direction;
 
-    var nextSnakeSquare = snakeSquare;
-    var nextRow = snake.head.row - 1;
-    var nextColumn = snake.head.column - 1;
-    var nextDirection = snake.head.direction - 1 ;
+    var nextSnakeSquare = snakeSquare - 1;
+    var nextRow = nextSnakeSquare - 1;
+    var nextColumn = nextSnakeSquare - 1;
+    var nextDirection = snake.tail.direction - 1;
 
     snakeSquare.direction = nextDirection;
     snakeSquare.row = nextRow;
@@ -213,22 +213,18 @@ function handleAppleCollision() {
 
   if (snake.tail.direction === "right"){
     console.log(snake.tail.direction);
-    console.log("left");
     makeSnakeSquare(snake.head.row, snake.head.column-1);
   }
   if (snake.tail.direction === "left"){
     console.log(snake.tail.direction);
-    console.log("right");
     makeSnakeSquare(snake.tail.row, snake.tail.column + 1);
   }
   if (snake.tail.direction === "up"){
     console.log(snake.tail.direction);
-    console.log("down");
     makeSnakeSquare(snake.tail.row + 1 , snake.tail.column);
   }
   if (snake.tail.direction === "down"){
     console.log(snake.tail.direction);
-    console.log("up");
     makeSnakeSquare(snake.tail.row - 1, snake.tail.column);
   }
   /* 
