@@ -160,20 +160,16 @@ function moveSnake() {
 
 function hasHitWall() {
   if (snake.head.column > COLUMNS){
-    
     return true
   }
   if (snake.head.column < 0){
     return true
-    
   }
   if (snake.head.row > ROWS){
     return true
-
   }
   if (snake.head.row < 0){
     return true
-  
   }
 
   /* 
@@ -265,7 +261,6 @@ function hasCollidedWithSnake() {
 }
 
 function endGame() {
-  snakedefault = (10, 10)
   // stop update function from running
   clearInterval(updateInterval);
 
