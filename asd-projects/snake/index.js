@@ -11,7 +11,9 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
+
 var snake =[ ];
+
 var apple = [ ];
 var score = 0;
 // Constant Variables
@@ -102,13 +104,13 @@ function checkForNewDirection(event) {
 }
 
 function moveSnake() {
-  for (var i=0; i>3; i++){
-    var snakeSquare = "???";
+  for (var i=0; i>snake.body.length; i++){
+    var snakeSquare = snake.head.direction;
 
-    var nextSnakeSquare = "???";
-    var nextRow = "???";
-    var nextColumn = "???";
-    var nextDirection = "???";
+    var nextSnakeSquare = snakeSquare;
+    var nextRow = snake.head.row - 1;
+    var nextColumn = snake.head.column - 1;
+    var nextDirection = snake.head.direction - 1 ;
 
     snakeSquare.direction = nextDirection;
     snakeSquare.row = nextRow;
@@ -217,17 +219,17 @@ function handleAppleCollision() {
   if (snake.tail.direction === "left"){
     console.log(snake.tail.direction);
     console.log("right");
-    makeSnakeSquare(snake.head.row, snake.head.column+1);
+    makeSnakeSquare(snake.tail.row, snake.tail.column + 1);
   }
   if (snake.tail.direction === "up"){
     console.log(snake.tail.direction);
     console.log("down");
-    makeSnakeSquare(snake.head.row + 1 , snake.head.column);
+    makeSnakeSquare(snake.tail.row + 1 , snake.tail.column);
   }
   if (snake.tail.direction === "down"){
     console.log(snake.tail.direction);
     console.log("up");
-    makeSnakeSquare(snake.head.row - 1, snake.head.column);
+    makeSnakeSquare(snake.tail.row - 1, snake.tail.column);
   }
   /* 
   TODO 10: determine the location of the next snakeSquare based on the .row,
