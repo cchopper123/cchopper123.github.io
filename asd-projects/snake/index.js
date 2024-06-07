@@ -203,22 +203,22 @@ function handleAppleCollision() {
   if (snake.tail.direction === "right"){
     console.log(snake.tail.direction);
     console.log("left");
-    makeSnakeSquare(snake.head.row + 1, snake.head.column + 1);
+    makeSnakeSquare(snake.head.row + 1);
   }
   if (snake.tail.direction === "left"){
     console.log(snake.tail.direction);
     console.log("right");
-    makeSnakeSquare(snake.tail.row + 1, snake.tail.column + 1);
+    makeSnakeSquare(snake.tail.row - 1);
   }
   if (snake.tail.direction === "up"){
     console.log(snake.tail.direction);
     console.log("down");
-    makeSnakeSquare(snake.tail.row + 1, snake.tail.column + 1);
+    makeSnakeSquare(snake.tail.column + 1);
   }
   if (snake.tail.direction === "down"){
     console.log(snake.tail.direction);
     console.log("up");
-    makeSnakeSquare(snake.tail.row + 1, snake.tail.column + 1);
+    makeSnakeSquare(snake.tail.column - 1);
   }
   /* 
   TODO 10: determine the location of the next snakeSquare based on the .row,
