@@ -13,6 +13,10 @@ body {
 #score, #highScore {
   color: white;
 }
+h1 {
+  height:450px;
+  width:450px;
+}
 
 .snake, .apple {
   display: block;

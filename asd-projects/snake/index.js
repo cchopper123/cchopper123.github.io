@@ -11,6 +11,7 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
+//var snakedefault = (row)
 var snake =[ ];
 var apple = [ ];
 var score = 0;
@@ -200,20 +201,24 @@ function handleAppleCollision() {
   makeApple();
 
   if (snake.tail.direction === "right"){
-    snake.tail.column = snake.tail.column + 1;
+    console.log(snake.tail.direction);
     console.log("left");
+    makeSnakeSquare(snake.head.row + 1, snake.head.column + 1);
   }
   if (snake.tail.direction === "left"){
-    snake.tail.column = snake.tail.column + 1;
+    console.log(snake.tail.direction);
     console.log("right");
+    makeSnakeSquare(snake.tail.row + 1, snake.tail.column + 1);
   }
   if (snake.tail.direction === "up"){
-    snake.tail.row = snake.tail.row + 1;
+    console.log(snake.tail.direction);
     console.log("down");
+    makeSnakeSquare(snake.tail.row + 1, snake.tail.column + 1);
   }
   if (snake.tail.direction === "down"){
-    snake.tail.row = snake.tail.row + 1;
+    console.log(snake.tail.direction);
     console.log("up");
+    makeSnakeSquare(snake.tail.row + 1, snake.tail.column + 1);
   }
   /* 
   TODO 10: determine the location of the next snakeSquare based on the .row,
@@ -250,6 +255,7 @@ function endGame() {
   clearInterval(updateInterval);
 
   // clear board of all elements
+  alert("Game Over");
   board.empty();
 
   // update the highScoreElement to display the highScore
