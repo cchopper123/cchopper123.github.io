@@ -100,17 +100,18 @@ function checkForNewDirection(event) {
 
   // FILL IN THE REST
 
-  //console.log(snake.head.direction);     // uncomment me!
+  console.log(snake.head.direction);     // uncomment me!
 }
 
 function moveSnake() {
   for (var i = 1; i > snake.body.length; i++){
     var snakeSquare = snake.head.direction;
 
-    var nextSnakeSquare = nextSnakeSquare - 1;
-    var nextRow = snake.body.column - 1;
+    var nextSnakeSquare = snakeSquare + 1;
+    console.log(nextSnakeSquare)
+    var nextRow = snake.body.row - 1;
     var nextColumn = snake.body.column - 1;
-    var nextDirection = snake.tail.direction - 1;
+    var nextDirection = snake.head.direction - 1;
 
     snakeSquare.direction = nextDirection;
     snakeSquare.row = nextRow;
@@ -342,7 +343,6 @@ function makeSnakeSquare(row, column) {
 function handleKeyDown(event) {
   // TODO 6a: make the handleKeyDown function register which key is pressed
   activeKey = event.which;
-  console.log(activeKey);
 }
 
 /* Given a gameSquare (which may be a snakeSquare or the apple), position
