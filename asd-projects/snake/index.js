@@ -214,7 +214,7 @@ function handleAppleCollision() {
 
   if (snake.tail.direction === "right"){
 
-    makeSnakeSquare(snake.head.row, snake.head.column-1);
+    makeSnakeSquare(snake.head.row, snake.head.column - 1);
   }
   if (snake.tail.direction === "left"){
 
