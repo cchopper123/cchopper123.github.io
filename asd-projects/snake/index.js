@@ -382,7 +382,7 @@ function getRandomAvailablePosition() {
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
     spaceIsAvailable = true;
-    debugger;
+
     for (var i = 1; i < snake.body.length; i++){
       console.log(snake.body[i])
     
