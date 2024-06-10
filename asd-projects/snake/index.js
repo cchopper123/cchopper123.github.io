@@ -246,6 +246,17 @@ function handleAppleCollision() {
 }
 
 function hasCollidedWithSnake() {
+  for (let i = 1; i < snake.body.length; i++){
+console.log(snake.body[i])
+
+
+
+  if (snake.head.row === snake.body[i].row && snake.head.column === snake.body[i].column){
+
+    return true
+  }
+}
+
   /* 
   TODO 12: Should return true if the snake's head has collided with any part of the
   snake's body.
