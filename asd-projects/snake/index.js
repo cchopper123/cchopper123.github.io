@@ -100,18 +100,18 @@ function checkForNewDirection(event) {
 
   // FILL IN THE REST
 
-  console.log(snake.head.direction);     // uncomment me!
+  //console.log(snake.head.direction);     // uncomment me!
 }
 
 function moveSnake() {
-  for (var i = 1; i > snake.body.length; i++){
-    var snakeSquare = snake.head.direction;
+  for (var i = snake.body.length - 1; i > 0; i--){
+    var snakeSquare = snake.body[i];
 
-    var nextSnakeSquare = snakeSquare + 1;
-    console.log(nextSnakeSquare)
-    var nextRow = snake.body.row - 1;
-    var nextColumn = snake.body.column - 1;
-    var nextDirection = snake.head.direction - 1;
+    var nextSnakeSquare = snake.body[i-1]
+    //console.log(nextSnakeSquare)
+    var nextRow =  nextSnakeSquare.row;
+    var nextColumn = nextSnakeSquare.column;
+    var nextDirection = nextSnakeSquare.direction;
 
     snakeSquare.direction = nextDirection;
     snakeSquare.row = nextRow;
