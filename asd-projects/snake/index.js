@@ -382,6 +382,18 @@ function getRandomAvailablePosition() {
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
     spaceIsAvailable = true;
+    debugger;
+    for (var i = 1; i < snake.body.length; i++){
+      console.log(snake.body[i])
+    
+    
+    if (randomPosition.column === snake.body[i].column && randomPosition.row === snake.body[i].row){
+      spaceIsAvailable = false; 
+     }
+    }
+      
+
+    
 
     /*
     TODO 13: After generating the random position determine if that position is
