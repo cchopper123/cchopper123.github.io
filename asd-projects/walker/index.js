@@ -49,9 +49,22 @@ function runProgram(){
   */
   function handleKeyDown(event) {
     if (event.which === KEY.LEFT){
-      console.log(" left pressed");
+      walker.speedx = -5;
+      console.log(walker.speedx);
     }
-    
+    if (event.which === KEY.RIGHT){
+      walker.speedx = +5;
+      console.log(walker.speedx);
+    }
+    if (event.which === KEY.UP){
+      walker.speedy = -5;
+      console.log(walker.speedy);
+    }
+    if (event.which === KEY.DOWN){
+      walker.speedy = -5;
+      console.log(walker.speedy);
+    }
+
   }
 
   ////////////////////////////////////////////////////////////////////////////////
