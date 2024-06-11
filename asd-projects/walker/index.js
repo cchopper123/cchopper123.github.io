@@ -28,7 +28,8 @@ function runProgram(){
 
   // one-time setup
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
-  $(document).on('keydown', handleKeyDown);                           // change 'eventType' to the type of event you want to handle
+  $(document).on('keydown', handleKeyDown);
+  $(document).on('keyup', handleKeyUp);                            // change 'eventType' to the type of event you want to handle
   
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
@@ -48,6 +49,12 @@ function runProgram(){
   Called in response to events.
   */
   function handleKeyDown(event) {
+    walker.speedx = 0;
+    walker.speedy = 0; 
+
+  }
+
+  function handleKeyUp(event) {
     if (event.which === KEY.LEFT){
       walker.speedx = -5;
       console.log(walker.speedx);
@@ -66,7 +73,6 @@ function runProgram(){
     }
 
   }
-
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
