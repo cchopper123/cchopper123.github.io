@@ -78,11 +78,14 @@ function runProgram(){
   ////////////////////////////////////////////////////////////////////////////////
 
   function repositionGameItem(){
-    walker.x += walker.speedx; 
+    walker.x += walker.speedx;
+    walker.y += walker.speedy;
     // update the position of the box along the x-axis
   }
   function redrawGameItem(){
-    $("#box").css("top", walker.x); 
+    $("#walker").css("left", walker.x);
+    $("#walker").css("up", walker.y); 
+
     // draw the box in the new location, positionX pixels away from the "left"
   }
   
