@@ -42,19 +42,21 @@ function runProgram(){
   function newFrame() {
     repositionGameItem();
     redrawGameItem();
+    wallCollision();
 
   }
   
   /* 
   Called in response to events.
   */
-  function handleKeyDown(event) {
+  function handleKeyUp(event) {
+    console.log(event.key)
     walker.speedx = 0;
     walker.speedy = 0; 
 
   }
 
-  function handleKeyUp(event) {
+  function handleKeyDown(event) {
     console.log(event.key);
     if (event.which === KEY.LEFT){
       walker.speedx = -5;
