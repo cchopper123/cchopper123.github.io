@@ -58,6 +58,7 @@ function runProgram(){
 
   function handleKeyDown(event) {
     console.log(event.key);
+    console.log(walker.x, walker.y)
     if (event.which === KEY.LEFT){
       walker.speedx = -5;
       console.log(walker.speedx);
@@ -80,8 +81,19 @@ function runProgram(){
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
   function wallCollision(){
-    $("#board").width()
-    $("#board").height()
+    const boardx = $("#board").width();
+
+    const boardy = $("#board").height();
+
+    if (walker.x > boardx - 50|| walker.y > boardy-50){
+      walker.x = walker.x - walker.speedx
+      walker.y = walker.y - walker.speedy 
+    }
+    if (walker.x < 0 || walker.y < 0){
+      walker.x = walker.x - walker.speedx
+      walker.y = walker.y - walker.speedy 
+    }
+    
   }
 
   function repositionGameItem(){
