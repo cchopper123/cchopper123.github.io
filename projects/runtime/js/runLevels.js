@@ -20,15 +20,20 @@ var runLevels = function (window) {
     // BEGIN EDITING YOUR CODE HERE
     function createSawBlade(){
       var hitZoneSize = 25;
+      var obstacleImage = draw.bitmap("img/sawblade.png");
       var damageFromObstacle = 10;
+      
       var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
       // sawBladeHitZone.x = 500;
       // sawBladeHitZone.y = 50;
       sawBladeHitZone.x = Math.random() * (900 - 500) + 500;
       sawBladeHitZone.y = Math.random() * (350 - 50) + 50;
       game.addGameItem(sawBladeHitZone);
-      var obstacleImage = draw.bitmap("img/sawblade.png");
+      obstacleImage.scaleX = 10000;
+      obstacleImage.scaleY = 10000;
+      
       sawBladeHitZone.addChild(obstacleImage);
+      
     }
     createSawBlade();
     createSawBlade();
