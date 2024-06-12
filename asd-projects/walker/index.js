@@ -55,12 +55,13 @@ function runProgram(){
   }
 
   function handleKeyUp(event) {
+    console.log(event.key);
     if (event.which === KEY.LEFT){
       walker.speedx = -5;
       console.log(walker.speedx);
     }
     if (event.which === KEY.RIGHT){
-      walker.speedx = +5;
+      walker.speedx = 5;
       console.log(walker.speedx);
     }
     if (event.which === KEY.UP){
@@ -68,7 +69,7 @@ function runProgram(){
       console.log(walker.speedy);
     }
     if (event.which === KEY.DOWN){
-      walker.speedy = -5;
+      walker.speedy = 5;
       console.log(walker.speedy);
     }
 
@@ -84,7 +85,9 @@ function runProgram(){
   }
   function redrawGameItem(){
     $("#walker").css("left", walker.x);
-    $("#walker").css("up", walker.y); 
+    $("#walker").css("right", walker.x); 
+    $("#walker").css("top", walker.y); 
+    $("#walker").css("bottom", walker.y); 
 
     // draw the box in the new location, positionX pixels away from the "left"
   }
