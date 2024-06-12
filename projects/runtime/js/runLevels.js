@@ -29,7 +29,8 @@ var runLevels = function (window) {
       sawBladeHitZone.x = Math.random() * (900 - 500) + 500;
       sawBladeHitZone.y = Math.random() * (350 - 50) + 50;
       game.addGameItem(sawBladeHitZone);
-      
+      obstacleImage.width = 3
+      obstacleImage.height = 3
       sawBladeHitZone.addChild(obstacleImage);
       
     }
