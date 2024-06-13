@@ -40,13 +40,14 @@ function applyFilter(filterFunction){
     
     // rgbNumbers[RED] = 0;
     // rgbNumbers[GREEN] = 0;
-    rgbNumbers[BLUE] = 255;
-    
-    // rgbString = rgbArrayToString(rgbNumbers);
-    image[i][j] = rgbString;
+    // rgbNumbers[BLUE] = 255;
     filterFunction(rgbNumbers);
+    rgbString = rgbArrayToString(rgbNumbers);
+    image[i][j] = rgbString;
+    
+    // console.log(rgbNumbers);
       // for (var c = 0; c <image.length; c++){
-      //   console.log(rgbNumbers[0])
+      //   console.log(rgbNumbers[c])
       // }
       
 
@@ -60,12 +61,27 @@ function applyFilter(filterFunction){
 
 
 // TODO 5: Create the keepInBounds function
-
+function keepInBounds(){
+  // if ( < 0){
+  //   return 0
+  // }
+  // if ( > 255){
+  //   return 255
+  // }
+  // if ( > 0 && < 255 ){
+  //   return 255
+  // }
+  // if ( < ){
+  //   return 
+  // }
+  // if ( < ){
+  //   return 0
+  // }
+}
 
 // TODO 3: Create reddify function
-function reddify(image){
-  // rgbNumbers[RED] = 200;
-  image
+function reddify(rgbNumbers){
+  rgbNumbers[RED] = 200;
 }
 
 // TODO 6: Create more filter functions
