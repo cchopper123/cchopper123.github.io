@@ -20,7 +20,16 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
+
   applyFilter(reddify);
+  applyFilter(decreaseBlue);
+  applyFilter(increaseGreenByBlue);
+  applyFilter(reddify);
+  applyFilter(decreaseBlue);
+  applyFilter(increaseGreenByBlue);
+  applyFilter(reddify);
+  applyFilter(decreaseBlue);
+  applyFilter(increaseGreenByBlue);
   
 
   // do not change the below line of code
@@ -65,7 +74,7 @@ function applyFilterNoBackground(){
 function keepInBounds(rgbNumbers){
   rgbNumbers = (rgbNumbers < 0)  ? 0 : rgbNumbers;
   rgbNumbers  = (rgbNumbers > 255) ? 255 : rgbNumbers;
-  return rgbNumbers
+  return rgbNumbers;
   // rgbNumbers = Math.min(rgbNumbers, 30);
   // rgbNumbers = Math.max(rgbNumbers, 255);
   
@@ -88,17 +97,19 @@ function keepInBounds(rgbNumbers){
 
 }
 
+
 // TODO 3: Create reddify function
 function reddify(rgbNumbers){
   rgbNumbers[RED] = 200;
 }
 
 // TODO 6: Create more filter functions
-function decreaseBlue(){
+function decreaseBlue(rgbNumbers){
+  rgbNumbers[BLUE] = keepInBounds([rgbNumbers-50]);
 
 }
-function increaseGreenByBlue(){
-
+function increaseGreenByBlue(rgbNumbers){
+  rgbNumbers[GREEN] = keepInBounds(rgbNumbers + rgbNumbers[GREEN]);
 }
 
 // CHALLENGE code goes below here
