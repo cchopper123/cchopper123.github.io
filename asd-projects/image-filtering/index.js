@@ -61,7 +61,16 @@ function applyFilter(filterFunction){
 
 
 // TODO 5: Create the keepInBounds function
-function keepInBounds(){
+function keepInBounds(rgbNumbers){
+  
+  
+  // let x =  255 < x < 0? return 255 : return 0
+  //   : score > 50
+  //   ? "Average"
+  //   : score > 40
+  //   ? "Fair"
+  //   : "Do better"
+  // let x = x < 0  || ||? return : c
   // if ( < 0){
   //   return 0
   // }
