@@ -58,34 +58,34 @@ function applyFilter(filterFunction){
 }
 
 // TODO 7: Create the applyFilterNoBackground function
+function applyFilterNoBackground(){
 
-
+}
 // TODO 5: Create the keepInBounds function
 function keepInBounds(rgbNumbers){
+  rgbNumbers = (rgbNumbers < 0)  ? 0 : rgbNumbers;
+  rgbNumbers  = (rgbNumbers > 255) ? 255 : rgbNumbers;
+  return rgbNumbers
+  // rgbNumbers = Math.min(rgbNumbers, 30);
+  // rgbNumbers = Math.max(rgbNumbers, 255);
   
-  
-  // let x =  255 < x < 0? return 255 : return 0
+  // let rgbNumbers =  255 < rgbNumbers < 0? return 255 : return 0
   //   : score > 50
   //   ? "Average"
   //   : score > 40
   //   ? "Fair"
   //   : "Do better"
-  // let x = x < 0  || ||? return : c
-  // if ( < 0){
+  
+  // if (rgbNumbers < 0){
   //   return 0
   // }
-  // if ( > 255){
+  // if (rgbNumbers > 255){
   //   return 255
   // }
-  // if ( > 0 && < 255 ){
-  //   return 255
+  // if (rgbNumbers > 0 && rgbNumbers < 255 ){
+  //   return rgbNumbers
   // }
-  // if ( < ){
-  //   return 
-  // }
-  // if ( < ){
-  //   return 0
-  // }
+
 }
 
 // TODO 3: Create reddify function
@@ -94,6 +94,11 @@ function reddify(rgbNumbers){
 }
 
 // TODO 6: Create more filter functions
+function decreaseBlue(){
 
+}
+function increaseGreenByBlue(){
+
+}
 
 // CHALLENGE code goes below here
