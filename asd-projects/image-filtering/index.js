@@ -22,14 +22,9 @@ function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
 
   applyFilter(reddify);
-  applyFilter(decreaseBlue);
-  applyFilter(increaseGreenByBlue);
-  applyFilter(reddify);
-  applyFilter(decreaseBlue);
-  applyFilter(increaseGreenByBlue);
-  applyFilter(reddify);
-  applyFilter(decreaseBlue);
-  applyFilter(increaseGreenByBlue);
+  //applyFilter(decreaseBlue);
+  // applyFilter(increaseGreenByBlue);
+
   
 
   // do not change the below line of code
