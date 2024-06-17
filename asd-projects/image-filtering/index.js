@@ -100,7 +100,7 @@ function reddify(rgbNumbers){
 
 // TODO 6: Create more filter functions
 function decreaseBlue(rgbNumbers){
-  rgbNumbers[BLUE] = keepInBounds([rgbNumbers-50]);
+  rgbNumbers[BLUE] = keepInBounds(rgbNumbers-50);
 
 }
 function increaseGreenByBlue(rgbNumbers){
