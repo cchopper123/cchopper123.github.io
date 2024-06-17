@@ -16,6 +16,7 @@ function resetAndRender() {
   render($("#display"), image);
 }
 
+
 // this function applies the filters to the image and is where you should call
 // all of your apply functions
 function applyAndRender() {
@@ -69,16 +70,14 @@ function applyFilterNoBackground(filterFunction){
   console.log(backgroundColor);
   for (var i = 0; i < image.length; i++) {
     for (var j = 0; j < image[i].length; j++) {
-      if (backgroundColor === rgbString){
-        rgbString
-      } else{
-      var rgbString = image[i][j];
+      if (backgroundColor != image[i][j]){
+        var rgbString = image[i][j];
       var rgbNumbers = rgbStringToArray(rgbString);
 
       filterFunction(rgbNumbers);
       rgbString = rgbArrayToString(rgbNumbers);
       image[i][j] = rgbString;
-    }
+      }
   }
 }
   
