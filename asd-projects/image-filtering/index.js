@@ -63,6 +63,7 @@ function applyFilter(filterFunction){
 
 
 // TODO 7: Create the applyFilterNoBackground function
+
 function applyFilterNoBackground(){
 
               
