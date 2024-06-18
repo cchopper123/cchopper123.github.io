@@ -21,13 +21,19 @@ var makeLevelData = function (window) {
         ],
       },
       {
-        name: "Robot Rampage",
-        number: 2,
+        name: "Star Reward",
+        number: 1,
         speed: -3,
         gameItems: [
-          { type: "sawblade", x: 400, y: groundY },
-          { type: "sawblade", x: 600, y: groundY },
-          { type: "sawblade", x: 900, y: groundY },
+          { type: "reward", x: 600, y: groundY-50 }
+        ],
+      },
+      {
+        name: "Green Marker",
+        number: 1,
+        speed: -3,
+        gameItems: [
+          { type: "marker", x: 800, y: groundY-50 }
         ],
       },
     ];
