@@ -64,11 +64,7 @@ var runLevels = function (window) {
       sawBladeHitZone.addChild(obstacleImage);
       
     }
-    createSawBlade();
-    createSawBlade();
-    createSawBlade();
-    createSawBlade();
-    createSawBlade();
+    
     
     function createEnemy(x, y){
       var enemy = game.createGameItem("enemy", 25);
@@ -78,8 +74,6 @@ var runLevels = function (window) {
       enemy.addChild(redSquare);
       enemy.x = 400;
       enemy.y = groundY - 50;
-      enemy.x = x;
-      enemy.y = y;
       game.addGameItem(enemy);
       enemy.velocity = 1;
       enemy.velocityX = -0.5;
@@ -92,10 +86,8 @@ var runLevels = function (window) {
         enemy.fadeOut();
       };
       
-      
     }
-    createEnemy(400, groundY - 50);
-    createEnemy(450, groundY - 50);
+    
 
   function createMarker(x, y){
     var marker = game.createGameItem("marker", 25);
@@ -118,8 +110,6 @@ var runLevels = function (window) {
       startLevel();
     };
   }
-  createMarker(900, groundY - 50)
-
 
     function startLevel() {
 
@@ -128,20 +118,23 @@ var runLevels = function (window) {
       var level = levelData[currentLevel]
       var levelObjects = level.gameItems
       for (var i = 0; i < levelObjects.length; i++){
+        object = levelObjects[i];
+        console.log(object.x, object.y)
+        console.log(object.type);
+        if (object.type = "sawblade"){
+          createSawBlade(object.x, object.y)
+        }
+        else if (object.type = "enemy"){
+          createEnemy(object.x, object.y)
+        }
+        else if (object.type = "reward"){
+          createReward(object.x, object.y)
+        }
+        else if (object.type = "marker")
+          createMarker(object.x, object.y)
         
-        
       }
-      if (levelData.type = "sawblade"){
-        createSawBlade(sawBlade.x, sawBlade.y)
-      }
-      else if (levelData = "enemy"){
-        createEnemy(enemy.x, enemy.y)
-      }
-      else if (levelData = "reward"){
-        createReward(reward.x, reward.y)
-      }
-      else if (levelData = "marker")
-        createMarker(marker.x, marker.y)
+      
 
       //////////////////////////////////////////////
       // DO NOT EDIT CODE BELOW HERE
