@@ -18,32 +18,8 @@ var runLevels = function (window) {
 
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
-    function createMarker(){
-      var reward = game.createGameItem("reward", 25);
-      var yellowStar = draw.rect(30, 30, "yellow");
-      yellowStar.x = -25;
-      yellowStar.y = -25;
-      reward.addChild(yellowStar);
-      reward.x = 400;
-      reward.y = groundY - 50;
-      reward.x = x;
-      reward.y = y;
-      game.addGameItem(reward);
-      reward.velocity = 1;
-      reward.velocityX = -0.5;
-      reward.rotationalVelocity = 1;
-      reward.onPlayerCollision = function(){
-        debugger;
-        game.increaseScore(100);
-        game.changeIntegrity(+10)
-        reward.fadeOut();
-      };
-      reward.onProjectileCollision = function(){
-
-        reward.fadeOut();
-      };
-    }
-    }
+    
+    
 
     function createReward(x, y){
       var reward = game.createGameItem("reward", 25);
@@ -60,7 +36,7 @@ var runLevels = function (window) {
       reward.velocityX = -0.5;
       reward.rotationalVelocity = 1;
       reward.onPlayerCollision = function(){
-        debugger;
+
         game.increaseScore(100);
         game.changeIntegrity(+10)
         reward.fadeOut();
@@ -70,7 +46,7 @@ var runLevels = function (window) {
         reward.fadeOut();
       };
     }
-    createReward(600, groundY - 50);
+    createReward(800, groundY - 50);
 
     function createSawBlade(){
       var hitZoneSize = 25;
@@ -121,6 +97,29 @@ var runLevels = function (window) {
     createEnemy(400, groundY - 50);
     createEnemy(450, groundY - 50);
 
+  function createMarker(x, y){
+    var marker = game.createGameItem("marker", 25);
+    var flag = draw.rect(50, 50, "green");
+    flag.x = -25;
+    flag.y = -25;
+    marker.addChild(flag);
+    marker.x = 400;
+    marker.y = groundY - 50;
+    marker.x = x;
+    marker.y = y;
+    game.addGameItem(marker);
+    marker.velocity = 1;
+    marker.velocityX = -0.5;
+    marker.rotationalVelocity = 1;
+    marker.onPlayerCollision = function(){
+      startLevel();
+    };
+    marker.onProjectileCollision = function(){
+      startLevel();
+    };
+  }
+  createMarker(900, groundY - 50)
+
 
     function startLevel() {
       // TODO 13 goes below here
@@ -138,6 +137,7 @@ var runLevels = function (window) {
     }
     startLevel();
   };
+   };
 
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 if (
