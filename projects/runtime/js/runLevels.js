@@ -122,9 +122,26 @@ var runLevels = function (window) {
 
 
     function startLevel() {
+
       // TODO 13 goes below here
 
-
+      var level = levelData[currentLevel]
+      var levelObjects = level.gameItems
+      for (var i = 0; i < levelObjects.length; i++){
+        
+        
+      }
+      if (levelData.type = "sawblade"){
+        createSawBlade(sawBlade.x, sawBlade.y)
+      }
+      else if (levelData = "enemy"){
+        createEnemy(enemy.x, enemy.y)
+      }
+      else if (levelData = "reward"){
+        createReward(reward.x, reward.y)
+      }
+      else if (levelData = "marker")
+        createMarker(marker.x, marker.y)
 
       //////////////////////////////////////////////
       // DO NOT EDIT CODE BELOW HERE
