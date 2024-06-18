@@ -119,19 +119,21 @@ var runLevels = function (window) {
       var levelObjects = level.gameItems
       for (var i = 0; i < levelObjects.length; i++){
         object = levelObjects[i];
+        debugger;
         console.log(object.x, object.y)
         console.log(object.type);
         if (object.type = "sawblade"){
-          createSawBlade(object.x, object.y)
+          createSawBlade(object.x, object.y);
         }
         else if (object.type = "enemy"){
-          createEnemy(object.x, object.y)
+          createEnemy(object.x, object.y);
         }
         else if (object.type = "reward"){
-          createReward(object.x, object.y)
+          createReward(object.x, object.y);
         }
-        else if (object.type = "marker")
-          createMarker(object.x, object.y)
+        else if (object.type = "marker"){
+          createMarker(object.x, object.y);
+        }
         
       }
       
