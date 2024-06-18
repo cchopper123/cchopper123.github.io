@@ -50,30 +50,42 @@ function runProgram(){
   Called in response to events.
   */
   function handleKeyUp(event) {
-    console.log(event.key)
-    walker.speedx = 0;
-    walker.speedy = 0; 
+    if (event.which === KEY.LEFT){
+      walker.speedx = 0;
+
+    }
+    if (event.which === KEY.RIGHT){
+      walker.speedx = 0;
+
+    }
+    if (event.which === KEY.UP){
+      walker.speedy = 0;
+
+    }
+    if (event.which === KEY.DOWN){
+      walker.speedy = 0;
+
+    }
 
   }
 
   function handleKeyDown(event) {
-    console.log(event.key);
-    console.log(walker.x, walker.y)
+
     if (event.which === KEY.LEFT){
       walker.speedx = -5;
-      console.log(walker.speedx);
+
     }
     if (event.which === KEY.RIGHT){
       walker.speedx = 5;
-      console.log(walker.speedx);
+
     }
     if (event.which === KEY.UP){
       walker.speedy = -5;
-      console.log(walker.speedy);
+
     }
     if (event.which === KEY.DOWN){
       walker.speedy = 5;
-      console.log(walker.speedy);
+
     }
 
   }
