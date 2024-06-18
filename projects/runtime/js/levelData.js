@@ -24,6 +24,8 @@ var makeLevelData = function (window) {
       },
       
     ];
+
+    var secondObject = levelData[0].gameItems[1];
     window.opspark.levelData = levelData;
   };
 };
