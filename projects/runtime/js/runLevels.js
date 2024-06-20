@@ -74,6 +74,8 @@ var runLevels = function (window) {
       enemy.addChild(redSquare);
       enemy.x = 400;
       enemy.y = groundY - 50;
+      enemy.x = x;
+      enemy.y = y;
       game.addGameItem(enemy);
       enemy.velocity = 1;
       enemy.velocityX = -0.5;
