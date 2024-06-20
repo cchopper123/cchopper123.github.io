@@ -97,15 +97,11 @@ var runLevels = function (window) {
     marker.velocity = 1;
     marker.velocityX = -0.5;
     marker.rotationalVelocity = 1;
-    //debugger;
+
     marker.onPlayerCollision = function(){
-      console.log("bam");
-      //debugger;
       startLevel();
     };
     marker.onProjectileCollision = function(){
-      console.log("bam");
-      //debugger;
       startLevel();
     };
   }
@@ -116,39 +112,27 @@ var runLevels = function (window) {
 
       var level = levelData[currentLevel]
    
-      //console.log(level);
+
       var levelObjects = level.gameItems
-      // console.log(levelObjects);
-      // console.log(levelObjects[0]);
-      // console.log(levelObjects[1]);
-      // console.log(levelObjects[2]);
-      // console.log(levelObjects[3]);
-      // console.log(levelObjects[4]);
-      // console.log(levelObjects[5]);
+
       for (var i = 0; i < levelObjects.length; i++){
         object = levelObjects[i];
-        //console.log(object.type);
+
         
         if (object.type === "sawblade"){
-          //sawBladeHitZone.x = Math.random() * (900 - 500) + 500;
-          //sawBladeHitZone.y = Math.random() * (350 - 50) + 50;
-          //console.log(object.type);
-          //console.log(object.x, object.y);
+          
           createSawBlade(object.x, object.y);
         }
         if (object.type === "enemy"){
-          //console.log(object.type);
-          //console.log(object.x, object.y);
+
           createEnemy(object.x, object.y);
         }
         if (object.type === "reward"){
-          //console.log(object.type);
-          //console.log(object.x, object.y);
+
           createReward(object.x, object.y);
         }
         if (object.type === "marker"){
-          //console.log(object.type);
-          //console.log(object.x, object.y);
+
           createMarker(object.x, object.y);
         }
         
