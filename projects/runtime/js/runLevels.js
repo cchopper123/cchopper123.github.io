@@ -100,10 +100,12 @@ var runLevels = function (window) {
     //debugger;
     marker.onPlayerCollision = function(){
       console.log("bam");
+      //debugger;
       startLevel();
     };
     marker.onProjectileCollision = function(){
       console.log("bam");
+      //debugger;
       startLevel();
     };
   }
