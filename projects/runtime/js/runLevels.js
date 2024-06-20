@@ -8,7 +8,6 @@ var runLevels = function (window) {
   window.opspark.runLevelInGame = function (game) {
     // some useful constants
     var groundY = game.groundY;
-    console.log(groundY);
     // this data will allow us to define all of the
     // behavior of our game
     var levelData = window.opspark.levelData;
@@ -19,8 +18,6 @@ var runLevels = function (window) {
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
     
-    
-
     function createReward(x, y){
       var reward = game.createGameItem("reward", 25);
       var yellowStar = draw.rect(30, 30, "yellow");
@@ -36,13 +33,11 @@ var runLevels = function (window) {
       reward.velocityX = -0.5;
       reward.rotationalVelocity = 1;
       reward.onPlayerCollision = function(){
-
         game.increaseScore(100);
         game.changeIntegrity(+10)
         reward.fadeOut();
       };
       reward.onProjectileCollision = function(){
-
         reward.fadeOut();
       };
     }
@@ -61,8 +56,7 @@ var runLevels = function (window) {
       obstacleImage.height = 3
       sawBladeHitZone.addChild(obstacleImage);
       
-    }
-    
+    } 
     
     function createEnemy(x, y){
       var enemy = game.createGameItem("enemy", 25);
@@ -103,10 +97,13 @@ var runLevels = function (window) {
     marker.velocity = 1;
     marker.velocityX = -0.5;
     marker.rotationalVelocity = 1;
+    //debugger;
     marker.onPlayerCollision = function(){
+      console.log("bam");
       startLevel();
     };
     marker.onProjectileCollision = function(){
+      console.log("bam");
       startLevel();
     };
   }
