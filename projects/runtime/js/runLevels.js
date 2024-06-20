@@ -118,29 +118,32 @@ var runLevels = function (window) {
       // TODO 13 goes below here
 
       var level = levelData[currentLevel]
+      console.log(level);
       var levelObjects = level.gameItems
+      console.log(levelObjects);
       for (var i = 0; i < levelObjects.length; i++){
         object = levelObjects[i];
+        console.log(object.type);
         if (object.type = "sawblade"){
           //sawBladeHitZone.x = Math.random() * (900 - 500) + 500;
           //sawBladeHitZone.y = Math.random() * (350 - 50) + 50;
-          console.log(object.type);
-          console.log(object.x, object.y);
-          createSawBlade(sawBladeHitZone.x, sawBladeHitZone.y);
+          //console.log(object.type);
+          //console.log(object.x, object.y);
+          createSawBlade(object.x, object.y);
         }
-        else if (object.type = "enemy"){
-          console.log(object.type);
-          console.log(object.x, object.y);
+        if (object.type = "enemy"){
+          //console.log(object.type);
+          //console.log(object.x, object.y);
           createEnemy(object.x, object.y);
         }
-        else if (object.type = "reward"){
-          console.log(object.type);
-          console.log(object.x, object.y);
+        if (object.type = "reward"){
+          //console.log(object.type);
+          //console.log(object.x, object.y);
           createReward(object.x, object.y);
         }
-        else if (object.type = "marker"){
-          console.log(object.type);
-          console.log(object.x, object.y);
+        if (object.type = "marker"){
+          //console.log(object.type);
+          //console.log(object.x, object.y);
           createMarker(object.x, object.y);
         }
         
