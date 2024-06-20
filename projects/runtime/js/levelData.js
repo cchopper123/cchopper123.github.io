@@ -15,15 +15,14 @@ var makeLevelData = function (window) {
         number: 1,
         speed: -3,
         gameItems: [
-          { type: "sawblade", x: 400, y: groundY - 50 },
-          { type: "sawblade", x: 350, y: groundY - 50 },
-          { type: "sawblade", x: 450, y: groundY - 50 },
+          { type: "sawblade", x: 400, y: groundY - 50  },
+          { type: "sawblade", x: 500, y: groundY - 50  },
+          { type: "sawblade", x: 600, y: groundY - 50 },
           { type: "enemy", x: 400, y: groundY - 50 },
           { type: "reward", x: 600, y: groundY - 50 },
           { type: "marker", x: 400, y: groundY - 50 }
         ],
       },
-      
     ];
 
     window.opspark.levelData = levelData;

@@ -27,10 +27,10 @@ var runLevels = function (window) {
       yellowStar.x = -25;
       yellowStar.y = -25;
       reward.addChild(yellowStar);
-      reward.x = 400;
-      reward.y = groundY - 50;
-      reward.x = x;
-      reward.y = y;
+      // reward.x = 400;
+      // reward.y = groundY - 50;
+      // reward.x = x;
+      // reward.y = y;
       game.addGameItem(reward);
       reward.velocity = 1;
       reward.velocityX = -0.5;
@@ -48,16 +48,16 @@ var runLevels = function (window) {
     }
     createReward(800, groundY - 50);
 
-    function createSawBlade(){
+    function createSawBlade(x, y){
       var hitZoneSize = 25;
       var obstacleImage = draw.bitmap("img/sawblade.png");
       var damageFromObstacle = 10;
       
       var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
-      // sawBladeHitZone.x = 500;
-      // sawBladeHitZone.y = 50;
-      sawBladeHitZone.x = Math.random() * (900 - 500) + 500;
-      sawBladeHitZone.y = Math.random() * (350 - 50) + 50;
+      sawBladeHitZone.x = x;
+      sawBladeHitZone.y = y;
+      //sawBladeHitZone.x = Math.random() * (900 - 500) + 500;
+      //sawBladeHitZone.y = Math.random() * (350 - 50) + 50;
       game.addGameItem(sawBladeHitZone);
       obstacleImage.width = 3
       obstacleImage.height = 3
@@ -72,10 +72,10 @@ var runLevels = function (window) {
       redSquare.x = -25;
       redSquare.y = -25;
       enemy.addChild(redSquare);
-      enemy.x = 400;
-      enemy.y = groundY - 50;
-      enemy.x = x;
-      enemy.y = y;
+      //enemy.x = 400;
+      //enemy.y = groundY - 50;
+      //enemy.x = x;
+      //enemy.y = y;
       game.addGameItem(enemy);
       enemy.velocity = 1;
       enemy.velocityX = -0.5;
@@ -97,10 +97,10 @@ var runLevels = function (window) {
     flag.x = -25;
     flag.y = -25;
     marker.addChild(flag);
-    marker.x = 400;
-    marker.y = groundY - 50;
-    marker.x = x;
-    marker.y = y;
+    //marker.x = 400;
+    //marker.y = groundY - 50;
+    //marker.x = x;
+    //marker.y = y;
     game.addGameItem(marker);
     marker.velocity = 1;
     marker.velocityX = -0.5;
@@ -121,19 +121,26 @@ var runLevels = function (window) {
       var levelObjects = level.gameItems
       for (var i = 0; i < levelObjects.length; i++){
         object = levelObjects[i];
-        debugger;
-        console.log(object.x, object.y)
-        console.log(object.type);
         if (object.type = "sawblade"){
-          createSawBlade(object.x, object.y);
+          //sawBladeHitZone.x = Math.random() * (900 - 500) + 500;
+          //sawBladeHitZone.y = Math.random() * (350 - 50) + 50;
+          console.log(object.type);
+          console.log(object.x, object.y);
+          createSawBlade(sawBladeHitZone.x, sawBladeHitZone.y);
         }
         else if (object.type = "enemy"){
+          console.log(object.type);
+          console.log(object.x, object.y);
           createEnemy(object.x, object.y);
         }
         else if (object.type = "reward"){
+          console.log(object.type);
+          console.log(object.x, object.y);
           createReward(object.x, object.y);
         }
         else if (object.type = "marker"){
+          console.log(object.type);
+          console.log(object.x, object.y);
           createMarker(object.x, object.y);
         }
         
