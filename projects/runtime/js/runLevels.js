@@ -118,9 +118,17 @@ var runLevels = function (window) {
       // TODO 13 goes below here
 
       var level = levelData[currentLevel]
+   
       console.log(level);
       var levelObjects = level.gameItems
       console.log(levelObjects);
+      console.log(levelObjects[0]);
+      console.log(levelObjects[1]);
+      console.log(levelObjects[2]);
+      console.log(levelObjects[3]);
+      console.log(levelObjects[4]);
+      console.log(levelObjects[5]);
+      console.log(levelObjects[6]);
       for (var i = 0; i < levelObjects.length; i++){
         object = levelObjects[i];
         console.log(object.type);
