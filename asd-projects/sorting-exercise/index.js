@@ -20,15 +20,15 @@ async function sleep(){
 }
 
 async function bubbleSort(array){
-//console.log("im ehre");
-//debugger;
+console.log("im ehre");
+debugger;
 for (var i = 0; i > array.length - 1; i++ ){
-    for (var j = 0; j > array.length + 1; j = i + 1){
+    //for (var j = 0; j > array.length - 1; j = i + 1){
         var item = array[j];
         console.log(item.value)
         array.sort();
         console.log(array);
-    //for (var j = i + 1; j < array.length + 1; j++){
+    for (var j = i + 1; j < array.length - 1; j++){
     
          if (array[j].value < array[j-1].value){
              swap(array[j]);
