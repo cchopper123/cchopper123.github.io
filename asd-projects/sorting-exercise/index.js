@@ -25,6 +25,7 @@ array.sort();
 debugger;
 for (var i = 0; i < array.length - 1; i++ ){
     for (var j = 0; j < array.length + 1; j = i + 1){
+    //for (var j = i + 1; j < array.length + 1; j++){
         if (array[j].value < array[j-1].value){
             swap(array[j]);
             updateCounter(bubbleCounter);
