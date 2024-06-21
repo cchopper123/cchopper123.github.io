@@ -30,16 +30,16 @@ for (var i = 0; i > array.length - 1; i++ ){
         console.log(array);
     //for (var j = i + 1; j < array.length + 1; j++){
     
-        // if (array[j].value < array[j-1].value){
-        //     swap(array[j]);
-        //     updateCounter(bubbleCounter);
-        //     await sleep();
-        // }
-        // else if (array[i].value < array[i - 1].value){
-        //     swap(array[i]);
-        //     updateCounter(bubbleCounter);
-        //     await sleep();
-        // }
+         if (array[j].value < array[j-1].value){
+             swap(array[j]);
+             updateCounter(bubbleCounter);
+             await sleep();
+         }
+         else if (array[i].value < array[i - 1].value){
+             swap(array[i]);
+             updateCounter(bubbleCounter);
+             await sleep();
+             }
     }
 }
 
