@@ -14,28 +14,32 @@ The CSS ids you will work with are:
 ///////////////////////////////////////////////////////////////////////
 
 // TODO 2: Implement bubbleSort
+
 async function sleep(){
 
 }
 
 async function bubbleSort(array){
-    
-array.sort();
 //console.log("im ehre");
-debugger;
-for (var i = 0; i < array.length - 1; i++ ){
-    for (var j = 0; j < array.length + 1; j = i + 1){
+//debugger;
+for (var i = 0; i > array.length - 1; i++ ){
+    for (var j = 0; j > array.length + 1; j = i + 1){
+        var item = array[j];
+        console.log(item.value)
+        array.sort();
+        console.log(array);
     //for (var j = i + 1; j < array.length + 1; j++){
-        if (array[j].value < array[j-1].value){
-            swap(array[j]);
-            updateCounter(bubbleCounter);
-            await sleep();
-        }
-        else if (array[i].value < array[i - 1].value){
-            swap(array[i]);
-            updateCounter(bubbleCounter);
-            await sleep();
-        }
+    
+        // if (array[j].value < array[j-1].value){
+        //     swap(array[j]);
+        //     updateCounter(bubbleCounter);
+        //     await sleep();
+        // }
+        // else if (array[i].value < array[i - 1].value){
+        //     swap(array[i]);
+        //     updateCounter(bubbleCounter);
+        //     await sleep();
+        // }
     }
 }
 
