@@ -22,8 +22,8 @@ async function bubbleSort(array){
         //console.log(array);
         //console.log(array[i]);
         for (var j = array.length - 1; j > i + 1; j--){
-            console.log(array[j].value)
-            console.log(array);
+            //console.log(array[j].value)
+            //console.log(array);
             if (array[j].value < array[j-1].value){
                 swap(array, j,j-1);
                 updateCounter(bubbleCounter);
