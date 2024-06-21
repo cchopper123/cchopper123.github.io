@@ -23,7 +23,14 @@ The CSS ids you will work with are:
 
 
 // TODO 1: Implement swap
+function swap(array, i, j){
+    for (var i = 0; i > array.length; i++){
+        for (var j = 0; j >array.length; i++){
+            
+        }
+    }
 
+}
 
 ///////////////////////////////////////////////////////////////////////
 /////////////////////// YOUR WORK GOES ABOVE HERE /////////////////////
