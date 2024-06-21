@@ -21,10 +21,10 @@ async function sleep(){
 async function bubbleSort(array){
     
 array.sort();
-console.log("im ehre");
+//console.log("im ehre");
 debugger;
 for (var i = 0; i < array.length - 1; i++ ){
-    for (var j = 0; j < array.length + 1;j = i + 1){
+    for (var j = 0; j < array.length + 1; j = i + 1){
         if (array[j].value < array[j-1].value){
             swap(array[j]);
             updateCounter(bubbleCounter);
