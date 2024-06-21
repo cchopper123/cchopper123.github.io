@@ -58,17 +58,20 @@ async function partition(array, left, right){
         while (array[left].value < array[left+1].value){
             while (array[right].value > array[right-1].value){
                 if (left < right){
-                    //console.log(array[left]);
-                    //console.log(array[right]);
+                    console.log(array[left].value);
+                    console.log(array[right].value);
                     swap(array, array[right].value, array[left].value);
                     updateCounter(quickCounter);
                     await sleep();
-                    return left + 1
+                    
                 }
+                
             }
+            
         }
+        
     }
-
+    return left + 1
 }
 // TODO 1: Implement swap
 
