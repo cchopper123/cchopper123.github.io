@@ -18,30 +18,19 @@ The CSS ids you will work with are:
 
 
 async function bubbleSort(array){
-console.log("im ehre");
-//debugger;
-for (var i = 0; i < array.length - 1; i++ ){
-    console.log(array);
-    console.log(array[i]);
-    for (var j = array.length - 1; j > i + 1; j--){
-        console.log(array[j].value)
-        //array.sort();
-        console.log(array);
-    //for (var j = i + 1; j = array.length - 1; j++){
-    
-         if (array[j].value < array[j-1].value){
-             swap(array, j,j-1);
-             updateCounter(bubbleCounter);
-             await sleep();
-         }
-        //  else if (array[i].value < array[i - 1].value){
-        //      swap(array[i]);
-        //      updateCounter(bubbleCounter);
-        //      await sleep();
-        //      }
+    for (var i = 0; i < array.length - 1; i++ ){
+        //console.log(array);
+        //console.log(array[i]);
+        for (var j = array.length - 1; j > i + 1; j--){
+            console.log(array[j].value)
+            console.log(array);
+            if (array[j].value < array[j-1].value){
+                swap(array, j,j-1);
+                updateCounter(bubbleCounter);
+                await sleep();
+            }
+        }
     }
-}
-
 }
 
 // TODO 3: Implement quickSort
@@ -64,7 +53,7 @@ async function partition(array, left, right){
     var pivot = array[Math.floor((right + left)/2)].value;
     while (left < right){
         while (array[left].value < pivot[left++].value){
-            while (array[right].value > pivot [right--].value){
+            while (array[right].value > pivot[right--].value){
                 if (left < right){
                     swap(array[left], array[right])
                     updateCounter(quickCounter);
@@ -79,18 +68,13 @@ async function partition(array, left, right){
 // TODO 1: Implement swap
 
 function swap(array, i, j){
-    //console.log("im here")
-            const temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-            drawSwap(array, i, j);
-            //array[j] = array[i];
-            //console.log(array);
-        }
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+    drawSwap(array, i, j);
+}
     
-    //console.log(array);
-    //console.log(row);
-    
+
 
 
 
