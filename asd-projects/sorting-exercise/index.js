@@ -15,31 +15,30 @@ The CSS ids you will work with are:
 
 // TODO 2: Implement bubbleSort
 
-async function sleep(){
 
-}
 
 async function bubbleSort(array){
 console.log("im ehre");
-debugger;
-for (var i = 0; i > array.length - 1; i++ ){
-    //for (var j = 0; j > array.length - 1; j = i + 1){
-        var item = array[j];
-        console.log(item.value)
-        array.sort();
+//debugger;
+for (var i = 0; i < array.length - 1; i++ ){
+    console.log(array);
+    console.log(array[i]);
+    for (var j = array.length - 1; j > i + 1; j--){
+        console.log(array[j].value)
+        //array.sort();
         console.log(array);
-    for (var j = i + 1; j < array.length - 1; j++){
+    //for (var j = i + 1; j = array.length - 1; j++){
     
          if (array[j].value < array[j-1].value){
-             swap(array[j]);
+             swap(array, j,j-1);
              updateCounter(bubbleCounter);
              await sleep();
          }
-         else if (array[i].value < array[i - 1].value){
-             swap(array[i]);
-             updateCounter(bubbleCounter);
-             await sleep();
-             }
+        //  else if (array[i].value < array[i - 1].value){
+        //      swap(array[i]);
+        //      updateCounter(bubbleCounter);
+        //      await sleep();
+        //      }
     }
 }
 
@@ -47,30 +46,53 @@ for (var i = 0; i > array.length - 1; i++ ){
 
 // TODO 3: Implement quickSort
 
+async function quickSort(array, left, right){
+    if (right-left > 0){
+        var index = await partition(array, left, right);
+        if (left < index-1){
+            quickSort(array, left, index-1)
+        }
+        if (index < right){
+            quickSort(array, index, right)
+        }
+    }
+}
 
 // TODOs 4 & 5: Implement partition
 
+async function partition(array, left, right){
+    var pivot = array[Math.floor((right + left)/2)].value;
+    while (left < right){
+        while (array[left].value < pivot[left++].value){
+            while (array[right].value > pivot [right--].value){
+                if (left < right){
+                    swap(array[left], array[right])
+                    updateCounter(quickCounter);
+                    await sleep();
+                    return left + 1
+                }
+            }
+        }
+    }
 
+}
 // TODO 1: Implement swap
 
 function swap(array, i, j){
     //console.log("im here")
-    
-    for (var i = 0; i > array.length; i++){
-        //var row = array[i];
-        for (var j = 0; j > array[i].length; j++){
             const temp = array[i];
             array[i] = array[j];
             array[j] = temp;
+            drawSwap(array, i, j);
             //array[j] = array[i];
             //console.log(array);
         }
-    }
-    console.log(array);
-    console.log(row);
-    drawSwap(array, i, j);
+    
+    //console.log(array);
+    //console.log(row);
+    
 
-}
+
 
 
 ///////////////////////////////////////////////////////////////////////
