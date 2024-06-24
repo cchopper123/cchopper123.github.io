@@ -140,9 +140,55 @@ function runProgram(){
     }
 
   }
+
   ////////////////////////////////////////////////////////////////////////////////
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
+
+  console.log(walker.width);
+  parseFloat(walker.width);
+  var val = document.getElementById("walker").getAttribute("width");  
+  console.log(val)
+  function playerCollision(walker, walker_1){
+    function findRadius(event){
+      //$(event.data.id).css(id.width);
+    }
+    function calcuatePeri(){
+      var formula = 2 * Math.PI * r
+      var r = console.log(" ")
+    };
+  
+    
+    walker.leftX = walker.x;
+    walker.topY = walker.y;
+    console.log(walker.rightX)
+    console.log(walker.width/2);
+  square1.rightX = square1.x + square1.width;
+  square1.bottomY = square1.y + square1.height;
+
+    // TODO: Do the same for square2
+  
+    walker_1.leftX = walker_1.x;
+    walker_1.topY = walker_1.y;
+  square2.rightX = square2.x + square2.width;
+  square2.bottomY = square2.y + square2.height;
+    // TODO: Return true if they are overlapping, false otherwise
+	
+	// Hint: use the following conditions:
+    // red left < blue right
+    // red right > blue left
+    // red top < blue bottom
+    // red bottom > blue top
+
+   if (square1.leftX < square2.rightX && square1.rightX > square2.leftX && square1.topY < square2.bottomY && square1.bottomY > square2.topY){
+     return true
+   }
+  else{
+    return false
+  }
+      
+  }
+  
   function wallCollision(){
     const boardx = $("#board").width();
     const boardy = $("#board").height();
