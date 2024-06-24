@@ -55,21 +55,20 @@ async function partition(array, left, right){
     pivot = array[Math.floor((right + left)/2)].value;
     //console.log(pivot);
     while (left < right){
-        while (array[left].value < array[left+1].value){
-            while (array[right].value > array[right-1].value){
-                if (left < right){
-                    console.log(array[left].value);
-                    console.log(array[right].value);
-                    swap(array, array[right].value, array[left].value);
-                    updateCounter(quickCounter);
-                    await sleep();
-                    
-                }
-                
-            }
+        while (array[left].value <= pivot){
+            left = left + 1
+        }
+        while (array[right].value >= pivot){
+            right = right - 1
             
         }
-        
+        if (left < right){
+            console.log(array[left].value);
+            console.log(array[right].value);
+            swap(array, left, right);
+            updateCounter(quickCounter);
+            await sleep();
+        }
     }
     return left + 1
 }
