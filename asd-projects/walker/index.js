@@ -37,17 +37,36 @@ function runProgram(){
   };
 
   // one-time setup
-  /*
-  var randomColor = "#000000".replace(/0/g, function () {
-    return (~~(Math.random() * 16)).toString(16);
-  });
-  */
+
   $("#board").append('<div id="walker_1"></div>');
-  $("#walker_1").css('background_color', "yellow");
   var interval = setInterval(newFrame, FRAMES_PER_SECOND_INTERVAL);   // execute newFrame every 0.0166 seconds (60 Frames per second)
   $(document).on('keydown', handleKeyDown);
-  $(document).on('keyup', handleKeyUp);                            // change 'eventType' to the type of event you want to handle
+  $(document).on('keyup', handleKeyUp);
+
+  //$("#walker").on("click", change_Color);
+  //$("#walker_1").on("click", change_Color);
+
+  $("#walker").on( "click", { id: "#walker" }, change_Color);
+  $("#walker_1").on( "click", { id: "#walker_1" }, change_Color);
+  //$(walker_1).on(" ", );
+
+
+  //$("#walker").on("click", change_Color); 
+
+
+    function change_Color(event) {
+      
+      var randomColor = "#000000".replace(/0/g, function () {
+        return (~~(Math.random() * 16)).toString(16);
+      });
+      $(event.data.id).css('background-color', randomColor);
+    } ;
   
+
+   
+
+                              // change 'eventType' to the type of event you want to handle
+  //$(document).getElementById("#walker").addEventListener("click", change_Color);
   ////////////////////////////////////////////////////////////////////////////////
   ///////////////////////// CORE LOGIC ///////////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
