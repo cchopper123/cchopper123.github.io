@@ -161,6 +161,15 @@ function runProgram(){
     
   function playerCollision(walker, walker_1){
     console.log("AIR");
+    //how to add onto the board's width + 10
+    //access the number then + 10 and put it back in
+    var bo = parseFloat($("#board").css('width'));
+    let root = document.getElementById("board").style;
+    root = root + 10 + " px";
+    document.getElementById("board").width = bo + 100;
+    
+    //bo + 100 = $("#board").css('width');
+    console.log(bo);
     walker.x = walker.x - walker.speedx;
     walker.y = walker.y - walker.speedy;
     walker_1.x = walker_1.x - walker_1.speedx;
