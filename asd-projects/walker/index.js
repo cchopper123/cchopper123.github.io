@@ -152,9 +152,10 @@ function runProgram(){
       //and look at its css and parseFloat into a intger
       console.log(walker);
 
-      //var r = parseFloat($(event.data.id).css('height'))/2;
-      //formula = 2 * Math.PI * r
-      //event.data.id.push({key:"circum", value: formula});
+      var r = parseFloat($(obj.id).css('height'))/2;
+      formula = 2 * Math.PI * r
+      obj.id.push({key:"circum", value: formula});
+      console.log(obj)
     };
     
     calcuateCirc(walker);
@@ -168,12 +169,17 @@ function runProgram(){
   else{
     return false
   }
+
   function playerCollision(){
     console.log("AIR");
-    walker.x = walker.x - walker.speedx
-    walker.y = walker.y - walker.speedy 
-    walker_1.x = walker_1.x - walker_1.speedx
-    walker_1.y = walker_1.y - walker_1.speedy 
+    walker.x = walker.x - walker.speedx;
+    walker.y = walker.y - walker.speedy;
+    walker_1.x = walker_1.x - walker_1.speedx;
+    walker_1.y = walker_1.y - walker_1.speedy;
+    walker.speedx = -walker.speedx;
+    walker.speedy = -walker.speedy;
+    walker_1.speedx = -walker_1.speedx;
+    walker_1.speedy = -walker_1.speedy;
   
   }
   
