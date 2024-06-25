@@ -48,7 +48,6 @@ function runProgram(){
 
   $("#walker").on( "click", { id: "#walker" }, change_Color);
   $("#walker_1").on( "click", { id: "#walker_1" }, change_Color);
-  //$(walker_1).on(" ", );
 
 
   //$("#walker").on("click", change_Color); 
@@ -61,7 +60,7 @@ function runProgram(){
       });
       $(event.data.id).css('background-color', randomColor);
     } ;
-  
+    
 
    
 
@@ -145,49 +144,39 @@ function runProgram(){
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
-  console.log(walker.width);
-  parseFloat(walker.width);
-  var val = document.getElementById("walker").getAttribute("width");  
-  console.log(val)
-  function playerCollision(walker, walker_1){
-    function findRadius(event){
-      //$(event.data.id).css(id.width);
-    }
-    function calcuatePeri(){
-      var formula = 2 * Math.PI * r
-      var r = console.log(" ")
+    //find circumference
+    //not an event an object
+    function calcuateCirc(){
+      //works???
+      //i want to take the object that someone wants from the function call
+      //and look at its css and parseFloat into a intger
+      console.log(walker);
+
+      //var r = parseFloat($(event.data.id).css('height'))/2;
+      //formula = 2 * Math.PI * r
+      //event.data.id.push({key:"circum", value: formula});
     };
-  
     
-    walker.leftX = walker.x;
-    walker.topY = walker.y;
-    console.log(walker.rightX)
-    console.log(walker.width/2);
-  square1.rightX = square1.x + square1.width;
-  square1.bottomY = square1.y + square1.height;
-
-    // TODO: Do the same for square2
-  
-    walker_1.leftX = walker_1.x;
-    walker_1.topY = walker_1.y;
-  square2.rightX = square2.x + square2.width;
-  square2.bottomY = square2.y + square2.height;
-    // TODO: Return true if they are overlapping, false otherwise
+    calcuateCirc(walker);
+    calcuateCirc(walker_1);
 	
-	// Hint: use the following conditions:
-    // red left < blue right
-    // red right > blue left
-    // red top < blue bottom
-    // red bottom > blue top
-
-   if (square1.leftX < square2.rightX && square1.rightX > square2.leftX && square1.topY < square2.bottomY && square1.bottomY > square2.topY){
-     return true
-   }
+   if (walker.circum < walker_1.circum && walker.circum > walker_1.circum){
+    console.log(WHAT);
+    //return true
+    playerCollision(walker, walker_1);
+  }
   else{
     return false
   }
-      
+  function playerCollision(){
+    console.log("AIR");
+    walker.x = walker.x - walker.speedx
+    walker.y = walker.y - walker.speedy 
+    walker_1.x = walker_1.x - walker_1.speedx
+    walker_1.y = walker_1.y - walker_1.speedy 
+  
   }
+  
   
   function wallCollision(){
     const boardx = $("#board").width();
