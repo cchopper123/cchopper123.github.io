@@ -144,23 +144,61 @@ function runProgram(){
   ////////////////////////// HELPER FUNCTIONS ////////////////////////////////////
   ////////////////////////////////////////////////////////////////////////////////
 
+  // var Circle1 = {
+  //   x : 4,
+  //   y : 4,
+  //   rad : 4
+  // }
+  // var Circle2 = {
+  //   x : 4,
+  //   y : 4,
+  //   rad : 4
+  // }
+  
+  //   var distance=Math.hypot(Circle1.x-Circle2.x, Circle1.y-Circle2.y);
+  //   console.log(distance)
+  // if such distance is less than the sum of the two radiuses (in your case 15) means that the two circles are overlapping, ergo they collided.
+  // if (distance<= Circle1.rad+Circle2.rad){
+  //  alert("COLLISION");
+  // }
     //find circumference
     //not an event an object
-    function calcuateCirc(){
+
+    //function calcuateCirc(){
       //works???
       //i want to take the object that someone wants from the function call
       //and look at its css and parseFloat into a intger
+      //omg the easier way is to track the distance of the two circles and if distance >= both circle radiuses
+      //then they collide and it is so easier and less to code but the thing is
+      //i already made circumference which means throwing away all my hard work
+     
+      
+      var r = parseFloat($("#walker").css('height'))/2;
+      //walker.push({key:"rad", value: r})
+      walker.rad = r;
+   
+      var r2 = parseFloat($("#walker_1").css('height'))/2;
+      walker_1.rad = r2;
       console.log(walker);
-
-      var r = parseFloat($(obj.id).css('height'))/2;
-      formula = 2 * Math.PI * r
-      obj.id.push({key:"circum", value: formula});
-      console.log(obj)
-    };
+      console.log(walker_1);
+      //walker_1.push({key:"rad", value: r2})
+      //formula = 2 * Math.PI * r
+      //loop????
+      var distance=Math.hypot(walker.x-walker_1.x, walker.y-walker_1.y)
+      console.log(distance)
+      if (distance<= walker.rad+walker_1.rad){
+        console.log("WAHWHHHHHH")
+      }
+      //obj.id.push({key:"circum", value: formula});
+      //console.log(obj)
+    //};
     
-    calcuateCirc(walker);
-    calcuateCirc(walker_1);
-	
+    //calcuateCirc(walker);
+    //calcuateCirc(walker_1);
+
+    //rework this part
+    //did i have to find the arc??
+    //how do i add a crying image in the code
    if (walker.circum < walker_1.circum && walker.circum > walker_1.circum){
     console.log(WHAT);
     //return true
@@ -169,8 +207,8 @@ function runProgram(){
   else{
     return false
   }
-
-  function playerCollision(){
+  
+  function playerCollision(walker, walker_1){
     console.log("AIR");
     walker.x = walker.x - walker.speedx;
     walker.y = walker.y - walker.speedy;
@@ -180,7 +218,6 @@ function runProgram(){
     walker.speedy = -walker.speedy;
     walker_1.speedx = -walker_1.speedx;
     walker_1.speedy = -walker_1.speedy;
-  
   }
   
   
@@ -204,7 +241,6 @@ function runProgram(){
       walker_1.x = walker_1.x - walker_1.speedx
       walker_1.y = walker_1.y - walker_1.speedy 
     }
-    
   }
 
   function repositionGameItem(){
@@ -226,7 +262,6 @@ function runProgram(){
     $("#walker_1").css("right", walker_1.x); 
     $("#walker_1").css("top", walker_1.y); 
     $("#walker_1").css("bottom", walker_1.y); 
-
 
     // draw the box in the new location, positionX pixels away from the "left"
   }
