@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  #board {
+    width: 1000px;
+    height: 700px;
+    border: 1px solid white;
+    background-color: black;
+    position: relative;
+  }
+  
