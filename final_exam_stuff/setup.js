@@ -19,3 +19,30 @@ add(3,5) // calls teh function and resolves into a data value it is a statement 
 
 //Expressions resolve to a data value
 "hale" + 'bot' // turns into halebot
+
+var name = "halle";
+console.log(name);
+var user = {"name":"halle"};
+console.log(user);
+var copyOfName = name;
+console.log(copyOfName);
+var copyOfUser = user;
+console.log(copyOfUser);
+copyOfName = "holly";
+console.log(copyOfName);
+copyOfUser.name = "holly";
+
+console.log(copyOfUser.name);
+console.log(copyOfName);
+console.log(user);
+console.log(name);
+
+var user = {
+    "name":"John",
+    "age":25,
+    "isAdmin": false
+};
+//didnt specify condition it akoledged it was there so it si true
+if (user.age){
+    console.log("wjat os tjos")
+}
