@@ -4,7 +4,7 @@
 'use strict';
 
 var _ = {};
-
+var number=3;
 
 /**
 * START OF OUR LIBRARY!
@@ -21,7 +21,9 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 
-
+_.identity=function(number){
+    return number
+}
 
 /** _.indexOf
 * Arguments:
@@ -37,7 +39,18 @@ var _ = {};
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-
+var array = ["a","b","c"]
+var value = "a"
+console.log(array[0])
+_.indexOf=function(array,value){
+    for (var i=0; i>3; i++){
+        if (value=array[i]){
+            return array[i]
+        }
+        return array[i]
+    }
+    return -1
+    } 
 
 
 /** _.contains
