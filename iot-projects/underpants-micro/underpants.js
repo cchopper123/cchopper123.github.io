@@ -53,7 +53,6 @@ _.indexOf=function(array, value){
     return -1
 } 
 
-
 /** _.contains
 * Arguments:
 *   1) An array
@@ -69,13 +68,18 @@ _.indexOf=function(array, value){
 */
 
 var array1 = [1,"two", 3.14];
+console.log(array1)
 var value1="two"
+console.log(value1)
 _.contains=function(array1, value1){
     for (var i=0; i<array1.length; i++){
-        if (array1[i]==value1){
+        if (array1[i]===value1){
+            console.log("It is here")
+            console.log(array1)
             return true
         }
     }
+    console.log("we didn't find it")
     return false
 }
 
@@ -91,7 +95,14 @@ _.contains=function(array1, value1){
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
+var collection =["a","b","c"];
+console.log(collection)
+function happy(){
+    console.log("happy happy happy")
+}
+_.each=function(collection, function(happy){
 
+}
 
 
 /** _.filter
