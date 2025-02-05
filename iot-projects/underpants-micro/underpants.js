@@ -3,6 +3,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
+// const { isInteger } = require("lodash");
+
 var _ = {};
 var number=3;
 
@@ -39,15 +41,11 @@ _.identity=function(number){
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-var array = ["a","b","c"]
+var array = ["a","b","c"];
 var value = "b"
-console.log(array)
-console.log(value)
 
 _.indexOf=function(array, value){
     for (var i=0; i<array.length; i++){
-        console.log(i)
-        console.log(array[i])
         if (array[i]==value){
             return i
         }   
@@ -70,7 +68,16 @@ _.indexOf=function(array, value){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
-
+var array1 = [1,"two", 3.14];
+var value1="two"
+_.contains=function(array1, value1){
+    for (var i=0; i<array1.length; i++){
+        if (array1[i]==value1){
+            return true
+        }
+    }
+    return false
+}
 
 /** _.each
 * Arguments:
