@@ -68,18 +68,13 @@ _.indexOf=function(array, value){
 */
 
 var array1 = [1,"two", 3.14];
-console.log(array1)
 var value1="two"
-console.log(value1)
 _.contains=function(array1, value1){
     for (var i=0; i<array1.length; i++){
         if (array1[i]===value1){
-            console.log("It is here")
-            console.log(array1)
             return true
         }
     }
-    console.log("we didn't find it")
     return false
 }
 
@@ -97,16 +92,21 @@ _.contains=function(array1, value1){
 */
 var collection =["a","b","c"];
 console.log(collection)
-function happy(){
-    console.log(collection[i])
-}
+//is called to log all the indexes form collection
+
 _.each=function(collection, happy){
-if (collection === Array){
-    happy()
+if (Array.isArray(collection)===true){
+    console.log(collection.length)
+    for (var i = 0; i<collection.length; i++){
+        happy(collection[i], i, collection)
+    }
+    //checks if it is an array
 }
     console.log(collection)
 }
-
+function happy(collection){
+    
+}
 
 /** _.filter
 * Arguments:
