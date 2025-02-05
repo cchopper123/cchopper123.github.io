@@ -40,17 +40,20 @@ _.identity=function(number){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 var array = ["a","b","c"]
-var value = "a"
-console.log(array[0])
-_.indexOf=function(array,value){
-    for (var i=0; i>3; i++){
-        if (value=array[i]){
-            return array[i]
-        }
-        return array[i]
+var value = "b"
+console.log(array)
+console.log(value)
+
+_.indexOf=function(array, value){
+    for (var i=0; i<array.length; i++){
+        console.log(i)
+        console.log(array[i])
+        if (array[i]==value){
+            return i
+        }   
     }
     return -1
-    } 
+} 
 
 
 /** _.contains
