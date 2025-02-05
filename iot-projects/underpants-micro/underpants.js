@@ -98,10 +98,13 @@ _.contains=function(array1, value1){
 var collection =["a","b","c"];
 console.log(collection)
 function happy(){
-    console.log("happy happy happy")
+    console.log(collection[i])
 }
-_.each=function(collection, function(happy){
-
+_.each=function(collection, happy){
+if (collection === Array){
+    happy()
+}
+    console.log(collection)
 }
 
 
