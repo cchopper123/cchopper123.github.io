@@ -123,7 +123,7 @@ function happy(collection){
 * Challenge:
 *   use _.each in your implementation
 */
-array2=[1,2,3,4,5]
+var array2=[1,2,3,4,5]
 _.filter=function(collection, happy){
     if (Array.isArray(collection)===true){
         console.log(collection.length)
