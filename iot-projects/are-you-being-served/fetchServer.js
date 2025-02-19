@@ -4,7 +4,8 @@ var port = 8080;
 
 http.createServer(async function(req, res) {
     res.writeHead(200, {"Content-Type": "text/html"});
-    console.log("raggedy princess could make you a new hambo in 10 seconds")
+    console.log("raggedy princess could make you a new hambo in 10 seconds");
+    var fetchResponse = await fetch("https://github.com/cchopper123/cchopper123.github.io.git");
 }).listen(port);
 //or raggedy princess could be your new hambo
 //she'd do it too
