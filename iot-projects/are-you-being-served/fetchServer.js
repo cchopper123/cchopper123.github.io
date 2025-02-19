@@ -3,7 +3,8 @@ const http = require("http");
 var port = 8080;
 
 http.createServer(async function(req, res) {
-//raggedy princess could make you a new hambo in 10 seconds
+    res.writeHead(200, {"Content-Type": "text/html"});
+    console.log("raggedy princess could make you a new hambo in 10 seconds")
 }).listen(port);
 //or raggedy princess could be your new hambo
 //she'd do it too
