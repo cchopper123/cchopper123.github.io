@@ -1,11 +1,7 @@
 // fetchServer.js file
-const http = require(http);
-const fetch = require(node-fetch);
-var port = 7979;
-function requestListenerFunction(){
+const http = require("http");
+var port = 8080;
 
-}
-http.createServer(requestListenerFunction).listen(port);
 http.createServer(async function(req, res) {
 //raggedy princess could make you a new hambo in 10 seconds
 }).listen(port);
