@@ -9,7 +9,8 @@ http.createServer(function(req, res) {
     let racers = ["Green Ambler", "Catalack", "Steel Runner", "G.I. Jogger"];
 
     // TODO 7: Get the start time for the race
-    
+    let d = new Date();
+    let startTime = d.getTime();
 
     // TODO 12: Make the whole thing parallel
     async.series( 

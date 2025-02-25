@@ -4,9 +4,16 @@ var args = process.argv.slice(2);
 const http = require("http");
 var port = 8080;
 
-http.createServer(async function(req, res) {
-    res.writeHead(200, {"Content-Type": "text/html"});
-    //console.log("raggedy princess could make you a new hambo in 10 seconds");
+
+
+http.createServer(async function(req, res, Content) {
+    if (Content==html){
+        res.writeHead(200, {"Content-Type": "text/html"});
+    }
+    else{
+        res.writeHead(200, {"Content-Type": "text/plain"});
+    }
+    
     var url =args[0] ? args[0]:"https://cchopper123.github.io";
     var fetchResponse = await fetch(url);
     if (fetchResponse.ok===true){
@@ -17,6 +24,7 @@ http.createServer(async function(req, res) {
         res.write(fetchResponse.statusText, fetchResponse.status);
         res.end();
     }
+    
 
 }).listen(port);
 //or raggedy princess could be your new hambo
