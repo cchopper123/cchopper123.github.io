@@ -8,7 +8,7 @@ function requestListener(req, res){
             res.write(serverStatus);
         }
     }
-    catch(err) {
+    catch {
         res.writeHead(500, {"Content-Type":"text/json"});
         res.write("Server no data");
     }
