@@ -37,9 +37,14 @@ http.createServer(function(req, res) {
             res.write("Results:\n");
             var victoryOrder = sortTogether(racers, results);
             for (var i=0; i <racers.length; i++){
-                res.write(racer.i + "\n");
+                res.write(racers[i] + "\n");
                 console.log("despite his criminal mind this racer is behaving very well");
             }
+            let d = new Date();
+            let endTime = d.getTime();
+            let duration = endTime-startTime;
+            res.write("Race Duration: " + duration + "ms\n");
+            res.end();
         }
     );
     
