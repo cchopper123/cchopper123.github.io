@@ -14,10 +14,12 @@ function requestListener(req, res){
             });
             req.on("end", function(){
                 serverStatus={};
-                serverStatus.status = JSON.parse();
+                console.log(body)
+                serverStatus.status = JSON.parse(body);
                 res.writeHead(200, {'Content-Type':"text/plain"});
-                res.write("Server Updated");
-            });
+            });   
+                         res.write("Server Updated");
+
         }
     }
     catch {
