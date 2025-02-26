@@ -7,6 +7,18 @@ function requestListener(req, res){
             res.writeHead(200,{'Content-Type':'text/plain'});
             res.write(serverStatus);
         }
+        else if (req.method==="PUT"){
+            var body = "";
+            req.on("data", function (data){
+                body += data;
+            });
+            req.on("end", function(){
+                serverStatus={};
+                serverStatus.status = JSON.parse();
+                res.writeHead(200, {'Content-Type':"text/plain"});
+                res.write("Server Updated");
+            });
+        }
     }
     catch {
         res.writeHead(500, {"Content-Type":"text/json"});
