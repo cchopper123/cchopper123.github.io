@@ -16,7 +16,21 @@ http.createServer(function(req, res) {
     async.series( 
         // TODO 9: Supply an array of functions
         [
-            
+            function(callback){
+                wrapper(callback);
+            },
+
+            function(callback){
+                wrapper(callback);
+            },
+
+            function(callback){
+                wrapper(callback);
+            },
+
+            function(callback){
+                wrapper(callback);
+            },
         ],
         function (error, results) {
             // TODO 10: add a callback function to the end of the async call to tally the results 
@@ -28,6 +42,10 @@ http.createServer(function(req, res) {
 
 // TODO 8: create a common function to be called by all functions in the array passed to the async function
 function wrapper(callback){
+    setTimeout(async function () {
+        d = new Date();
+        callback(null, d.getTime);
+    }, Math.random()*1000)
 
 }
 
