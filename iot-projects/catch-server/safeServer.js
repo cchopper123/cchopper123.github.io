@@ -4,8 +4,8 @@ let serverStatus = undefined;
 function requestListener(req, res){
     try{
         if (req.method==="GET"){
-            serverStatus="live";
             res.writeHead(200,{'Content-Type':'text/plain'});
+            res.write(serverStatus);
         }
     }
     catch{
