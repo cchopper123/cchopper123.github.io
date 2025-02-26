@@ -19,18 +19,15 @@ http.createServer(function(req, res) {
             function(callback){
                 wrapper(callback);
             },
-
             function(callback){
                 wrapper(callback);
             },
-
             function(callback){
                 wrapper(callback);
             },
-
             function(callback){
                 wrapper(callback);
-            },
+            }
         ],
         function (error, results) {
             // TODO 10: add a callback function to the end of the async call to tally the results 
