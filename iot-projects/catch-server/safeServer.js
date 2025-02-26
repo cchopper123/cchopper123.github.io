@@ -5,7 +5,6 @@ function requestListener(res, req){
     try{
         if (req.method==="GET"){
             serverStatus="live";
-            console.log(serverStatus);
             res.writeHead(200,{'Content-Type':'text/plain'});
         }
     }
