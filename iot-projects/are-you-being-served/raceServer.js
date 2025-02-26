@@ -33,8 +33,8 @@ http.createServer(function(req, res) {
             // TODO 10: add a callback function to the end of the async call to tally the results 
             res.write("Results:\n");
             var victoryOrder = sortTogether(racers, results);
-            for (var i=0; i <racers.length; i++){
-                res.write(racers[i] + "\n");
+            for (var i=0; i <victoryOrder.length; i++){
+                res.write(victoryOrder[i] + "\n");
             }
             let d = new Date();
             let endTime = d.getTime();
