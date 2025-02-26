@@ -1,7 +1,7 @@
 const http = require("http");
 const port=3000;
 let serverStatus = undefined;
-function requestListener(res, req){
+function requestListener(req, res){
     try{
         if (req.method==="GET"){
             serverStatus="live";
