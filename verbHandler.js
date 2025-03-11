@@ -14,7 +14,14 @@ http.createServer(function(req,res){
             res.end(notSecret);
         }
     }else if (req.method==="PUT"){
-        req.on("data");
+        req.on("data", function(chunk){
+            console.log(chunk.toString());
+            secret += chunk.toString();
+        });
+        req.on("end", function(){
+            res.writeHead(200, {"content-type":"text/plain"});
+            res.end(secret);
+        });
     }else if (req.method === "POST"){
 
     }else if (req.method === "DELETE"){
