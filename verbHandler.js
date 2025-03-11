@@ -14,7 +14,7 @@ http.createServer(function(req,res){
             res.end(notSecret);
         }
     }else if (req.method==="PUT"){
-
+        req.on("data");
     }else if (req.method === "POST"){
 
     }else if (req.method === "DELETE"){
