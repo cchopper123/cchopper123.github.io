@@ -37,7 +37,7 @@ http.createServer(function(req,res){
         req.on("end", function(){
             res.writeHead(200, {"content-type":"text/plain"});
             console.log(list);
-            res.end("data added successfully");
+            res.end(JSON.stringify(list));
         });
         //deleting stuff
     }else if (req.method === "DELETE"){
