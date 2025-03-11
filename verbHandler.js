@@ -18,7 +18,9 @@ http.createServer(function(req,res){
     }else if (req.method === "POST"){
 
     }else if (req.method === "DELETE"){
-
+        secret=undefined;
+        res.writeHead(200,{'Content-Type':'text/plain'});
+        res.end('hey guys im 16 im the new player on the basket ball team im really excited to play mr bolton we know it is you-');
     }else{
 
     }
