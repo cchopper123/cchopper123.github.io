@@ -5,6 +5,7 @@ var secret='girl you blanching i live up in a mansion what ugh i cant get that s
 var data=undefined;
 var notSecret = "i like sleeping"
 http.createServer(function(req,res){
+    //get stuff from html
     if (req.method==="GET"){
         //set status code to 200 and content type to plain
         res.writeHead(200, {'Content-Type':'text/plain'});
@@ -14,26 +15,31 @@ http.createServer(function(req,res){
         } else{
             res.end(notSecret);
         }
+        //processing incoming request
     }else if (req.method==="PUT"){
         req.on("data", function(chunk){
             console.log(chunk.toString());
             secret += chunk.toString();
         });
+        // responding to put request
         req.on("end", function(){
             res.writeHead(200, {"content-type":"text/plain"});
             res.end(secret);
         });
     }else if (req.method === "POST"){
+        //adding stuff
         req.on("data", function(chunk){
             //push data to list
             const incomingData = chunk.toString()
             list.push(incomingData);
         });
+
         req.on("end", function(){
             res.writeHead(200, {"content-type":"text/plain"});
             console.log(list);
             res.end("data added successfully");
         });
+        //deleting stuff
     }else if (req.method === "DELETE"){
         res.writeHead(200,{'Content-Type':'text/plain'});
         secret=undefined;
