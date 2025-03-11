@@ -123,8 +123,12 @@ function happy(collection){
 * Challenge:
 *   use _.each in your implementation
 */
-var array2=[1,2,3,4,5]
-_.filter=function(collection, happy){
+
+var array2=[1,2,3,4,5];
+function sad(array2){
+        
+}
+_.filter=function(array2, sad){
     if (Array.isArray(collection)===true){
         console.log(collection.length)
         for (var i = 0; i<collection.length; i++){
@@ -134,9 +138,7 @@ _.filter=function(collection, happy){
     }
         console.log(collection)
     }
-    function sad(array2){
-        
-    }
+
 
 
 /** _.reject
