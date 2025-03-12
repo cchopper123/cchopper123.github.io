@@ -188,7 +188,8 @@ _.reject=function(array2, callback){
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-
+//callback is input array
+//collection is input object
 _.map=function(collection, callback){
     var results=[];
     if (Array.isArray(collection)===true){
