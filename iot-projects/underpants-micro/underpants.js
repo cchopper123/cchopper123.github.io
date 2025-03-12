@@ -91,18 +91,18 @@ _.contains=function(array1, value1){
 *      -> should log "a" "b" "c" to the console
 */
 var collection =["a","b","c"];
-console.log(collection)
+//console.log(collection)
 //is called to log all the indexes form collection
 
 _.each=function(collection, happy){
 if (Array.isArray(collection)===true){
-    console.log(collection.length)
+    //console.log(collection.length)
     for (var i = 0; i<collection.length; i++){
         happy(collection[i], i, collection)
     }
     //checks if it is an array
 }
-    console.log(collection)
+    //console.log(collection)
 }
 function happy(collection){
     
@@ -124,22 +124,28 @@ function happy(collection){
 *   use _.each in your implementation
 */
 
-var array2=[1,2,3,4,5];
-function sad(array2){
-        
-}
-_.filter=function(array2, sad){
-    if (Array.isArray(collection)===true){
-        console.log(collection.length)
-        for (var i = 0; i<collection.length; i++){
-            happy(collection[i], i, collection)
+
+_.filter=function(array2, callback){
+    var results=[];
+    if (Array.isArray(array2)===true){
+        for (var i = 0; i<array2.length; i++){
+            if (callback(array2[i], i, array2)===true){
+                results.push(array2[i]);
+            }
+         
         }
         //checks if it is an array
     }
-        console.log(collection)
+        return results
     }
 
-
+    var numbers = [1, 2, 3, 4, 5, 6, 7]
+const evenNumbers = _.filter(numbers, function(val) {
+    if(val % 2 === 0){
+        return true
+    }
+})
+console.log(evenNumbers)
 
 /** _.reject
 * Arguments:
