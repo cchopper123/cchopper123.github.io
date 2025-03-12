@@ -5,7 +5,7 @@ function requestListener(req, res){
     try{
         if (req.method === "GET"){
             res.writeHead(200,{'Content-Type':'text/plain'});
-            res.write(serverStatus);
+            res.write(serverStatus.message);
         }
         else if (req.method==="PUT"){
             var body = "";
@@ -15,7 +15,7 @@ function requestListener(req, res){
             req.on("end", function(){
                 serverStatus={};
                 console.log(body)
-                serverStatus.status = JSON.parse(body);
+                serverStatus = JSON.parse(body);
                 res.writeHead(200, {'Content-Type':"text/plain"});
             });   
                          res.write("Server Updated");
