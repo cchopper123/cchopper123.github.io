@@ -160,6 +160,19 @@ console.log(evenNumbers)
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+_.reject=function(array2, callback){
+    var results=[];
+    if (Array.isArray(array2)===true){
+        for (var i = 0; i<array2.length; i++){
+            if (callback(array2[i], i, array2)===false){
+                results.push(array2[i]);
+            }
+         
+        }
+        //checks if it is an array
+    }
+        return results
+    }
 
 
 /** _.map
@@ -176,7 +189,18 @@ console.log(evenNumbers)
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
 
-
+_.map=function(collection, callback){
+    var results=[];
+    if (Array.isArray(collection)===true){
+        for (var i = 0; i<collection.length; i++){
+            results.push(callback(collection[i], i, collection));
+            
+        }
+        //checks if it is an array
+    }
+    return results;
+        //console.log(collection)
+    }
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
