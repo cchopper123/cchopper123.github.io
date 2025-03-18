@@ -32,6 +32,7 @@ const server = http.createServer(function (req, res) {
       temperature = 100;
       nextChange = 0;
     }
+    console.log(temperature);
   }
   setInterval(generateTemperature, 1000);
 });
