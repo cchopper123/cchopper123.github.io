@@ -7,7 +7,8 @@ const port = 8080;
 
 //TODO 1: Variables and generateTemperature function
 
-
+var temperature = 72;
+var nextChange = 0;
 // Configure our HTTP server.
 const server = http.createServer(function (req, res) {
   /* DO NOT EDIT THIS CODE */
@@ -20,12 +21,22 @@ const server = http.createServer(function (req, res) {
   /* DO NOT EDIT THIS CODE */
 
   //TODO 2: Regular Polling Server
-
-
+  function generateTemperature() {
+    let changeDifference = Math.random() - 0.5;
+    nextChange += changeDifference;
+    temperature += nextChange;
+    if (temperature < 0) {
+      temperature = 0;
+      nextChange = 0;
+    } else if (temperature > 100) {
+      temperature = 100;
+      nextChange = 0;
+    }
+  }
+  setInterval(generateTemperature, 1000);
 });
 
 //TODO 7: WebSocket Server
-
 
 /* DO NOT EDIT THIS CODE */
 server.listen(port);
