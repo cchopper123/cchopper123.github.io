@@ -120,7 +120,15 @@ $(document).ready(function () {
       }
     }
     // TODO 5: Regular JSON Polling
-
+    function doJSONPoll() {
+      $.getJSON("http://localhost:8080/", function (result) {
+        // Callback code will go here in the next steps
+        addDataPoint(temperature);
+        updateAjaxRecords(temperature);
+        updateJSONRecords(temperature);
+        updateWSRecords(temperature);
+      });
+    }
     // TODO 6: AJAX Polling
 
     // TODO 7: WebSocket Polling
