@@ -89,7 +89,36 @@ $(document).ready(function () {
     );
 
     // TODO 4: Update high and low records
-
+    function updateJSONRecords(value) {
+      if (value > json.highest) {
+        json.highest = value;
+        $("#json-highest").text(`Highest recorded value is ${json.highest}`);
+      }
+      if (value < json.lowest) {
+        json.lowest = value;
+        $("#json-lowest").text(`Lowest recorded value is ${json.lowest}`);
+      }
+    }
+    function updateAjaxRecords(value) {
+      if (value > ajax.highest) {
+        ajax.highest = value;
+        $("#ajax-highest").text(`Highest recorded value is ${ajax.highest}`);
+      }
+      if (value < ajax.lowest) {
+        ajax.lowest = value;
+        $("#ajax-lowest").text(`Lowest recorded value is ${ajax.lowest}`);
+      }
+    }
+    function updateWSRecords(value) {
+      if (value > ws.highest) {
+        ws.highest = value;
+        $("#ws-highest").text(`Highest recorded value is ${ws.highest}`);
+      }
+      if (value < ws.lowest) {
+        ws.lowest = value;
+        $("#ws-lowest").text(`Lowest recorded value is ${ws.lowest}`);
+      }
+    }
     // TODO 5: Regular JSON Polling
 
     // TODO 6: AJAX Polling
