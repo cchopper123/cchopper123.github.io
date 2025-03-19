@@ -123,10 +123,10 @@ $(document).ready(function () {
     function doJSONPoll() {
       $.getJSON("http://localhost:8080/", function (result) {
         // Callback code will go here in the next steps
-        addDataPoint(temperature);
-        updateAjaxRecords(temperature);
-        updateJSONRecords(temperature);
-        updateWSRecords(temperature);
+        addDataPoint();
+        updateAjaxRecords();
+        updateJSONRecords();
+        updateWSRecords();
       });
     }
     setInterval(doJSONPoll);
