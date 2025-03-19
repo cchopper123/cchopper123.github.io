@@ -76,16 +76,16 @@ $(document).ready(function () {
       `<p id=${json.lowID}>Lowest recorded JSON value is ${json.lowest}</p>`
     );
     $("#ajax-chart-container").append(
-      `<p id=${ajax.highID}>Highest recorded JSON value is ${ajax.highest}</p>`
+      `<p id=${ajax.highID}>Highest recorded Ajax value is ${ajax.highest}</p>`
     );
     $("#ajax-chart-container").append(
-      `<p id=${ajax.lowID}>Lowest recorded JSON value is ${ajax.lowest}</p>`
+      `<p id=${ajax.lowID}>Lowest recorded Ajax value is ${ajax.lowest}</p>`
     );
     $("#ws-chart-container").append(
-      `<p id=${ws.highID}>Highest recorded JSON value is ${ws.highest}</p>`
+      `<p id=${ws.highID}>Highest recorded WS value is ${ws.highest}</p>`
     );
     $("#ws-chart-container").append(
-      `<p id=${ws.lowID}>Lowest recorded JSON value is ${ws.lowest}</p>`
+      `<p id=${ws.lowID}>Lowest recorded WS value is ${ws.lowest}</p>`
     );
 
     // TODO 4: Update high and low records
