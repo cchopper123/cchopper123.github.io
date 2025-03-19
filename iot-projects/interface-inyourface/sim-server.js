@@ -35,6 +35,8 @@ const server = http.createServer(function (req, res) {
   /* DO NOT EDIT THIS CODE */
 
   //TODO 2: Regular Polling Server
+  res.writeHead(200, { "Content-Type": "application/json" });
+  res.end(JSON.stringify({ value: temperature }));
 });
 
 //TODO 7: WebSocket Server
