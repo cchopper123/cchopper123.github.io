@@ -129,6 +129,7 @@ $(document).ready(function () {
         updateWSRecords(temperature);
       });
     }
+    setInterval(doJSONPoll);
     // TODO 6: AJAX Polling
 
     // TODO 7: WebSocket Polling
