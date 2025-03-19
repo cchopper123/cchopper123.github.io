@@ -124,9 +124,9 @@ $(document).ready(function () {
       $.getJSON("http://localhost:8080/", function (result) {
         // Callback code will go here in the next steps
         addDataPoint();
-        updateAjaxRecords();
-        updateJSONRecords();
-        updateWSRecords();
+        updateAjaxRecords(result.value);
+        updateJSONRecords(result.value);
+        updateWSRecords(result.value);
       });
     }
     setInterval(doJSONPoll);
