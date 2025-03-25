@@ -138,7 +138,7 @@ $(document).ready(function () {
       $.ajax({
         url: "http://localhost:8080/",
         method: "GET",
-        dataType: "json",
+        dataType: "ajax",
         success: function (result) {
           addDataPoint(result, ajaxData, ajaxChart);
           updateAjaxRecords(result.value);
