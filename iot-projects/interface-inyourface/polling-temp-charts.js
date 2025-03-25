@@ -139,11 +139,13 @@ $(document).ready(function () {
         method: "GET",
         dataType: "json",
         success: function (result) {
+          console.log(result);
           addDataPoint(result, ajaxData, ajaxChart);
           // Fill in the body of the success function
         },
       });
     }
+    setInterval(doAJAXPoll, 2000);
     // TODO 7: WebSocket Polling
 
     // Do not work below this line
