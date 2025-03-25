@@ -131,7 +131,7 @@ $(document).ready(function () {
         updateWSRecords(result.value);
       });
     }
-    setInterval(doJSONPoll, 5000);
+    setInterval(doJSONPoll, 2000);
     // TODO 6: AJAX Polling
 
     // TODO 7: WebSocket Polling
