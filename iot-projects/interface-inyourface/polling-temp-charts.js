@@ -46,6 +46,7 @@ $(document).ready(function () {
       if (dataSet.getNumberOfRows() > maxDataPoints) {
         dataSet.removeRow(0);
       }
+      console.log(dataPoint);
       dataSet.addRow([getTime(), dataPoint.value]);
       chart.draw(dataSet, options);
     }
@@ -54,8 +55,8 @@ $(document).ready(function () {
     const json = {
       highest: 0,
       lowest: 100,
-      highID: "#json-highest",
-      lowID: "#json-lowest",
+      highID: "json-highest",
+      lowID: "json-lowest",
     };
     const ajax = {
       highest: 0,
@@ -124,7 +125,7 @@ $(document).ready(function () {
       $.getJSON("http://localhost:8080/", function (result) {
         // Callback code will go here in the next steps
         // addDataPoint(result, ajaxData, ajaxChart);
-        addDataPoint(result.temperature, jsonData, jsonChart);
+        addDataPoint(result, jsonData, jsonChart);
         // addDataPoint(result, wsData, wsChart);
         // updateAjaxRecords(result.value);
         updateJSONRecords(result.value);
@@ -139,7 +140,6 @@ $(document).ready(function () {
         method: "GET",
         dataType: "json",
         success: function (result) {
-          console.log(result);
           addDataPoint(result, ajaxData, ajaxChart);
           // Fill in the body of the success function
         },
