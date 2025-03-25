@@ -46,7 +46,6 @@ $(document).ready(function () {
       if (dataSet.getNumberOfRows() > maxDataPoints) {
         dataSet.removeRow(0);
       }
-      console.log(dataPoint);
       dataSet.addRow([getTime(), dataPoint.value]);
       chart.draw(dataSet, options);
     }
@@ -125,6 +124,7 @@ $(document).ready(function () {
       $.getJSON("http://localhost:8080/", function (result) {
         // Callback code will go here in the next steps
         // addDataPoint(result, ajaxData, ajaxChart);
+
         addDataPoint(result, jsonData, jsonChart);
         // addDataPoint(result, wsData, wsChart);
         // updateAjaxRecords(result.value);
@@ -141,6 +141,7 @@ $(document).ready(function () {
         dataType: "json",
         success: function (result) {
           addDataPoint(result, ajaxData, ajaxChart);
+          updateAjaxRecords(result.value);
           // Fill in the body of the success function
         },
       });
