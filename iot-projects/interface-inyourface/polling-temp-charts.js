@@ -123,12 +123,12 @@ $(document).ready(function () {
     function doJSONPoll() {
       $.getJSON("http://localhost:8080/", function (result) {
         // Callback code will go here in the next steps
-        addDataPoint(result, ajaxData, ajaxChart);
-        addDataPoint(result, jsonData, jsonChart);
-        addDataPoint(result, wsData, wsChart);
-        updateAjaxRecords(result.value);
+        // addDataPoint(result, ajaxData, ajaxChart);
+        addDataPoint(result.temperature, jsonData, jsonChart);
+        // addDataPoint(result, wsData, wsChart);
+        // updateAjaxRecords(result.value);
         updateJSONRecords(result.value);
-        updateWSRecords(result.value);
+        // updateWSRecords(result.value);
       });
     }
     setInterval(doJSONPoll, 2000);
