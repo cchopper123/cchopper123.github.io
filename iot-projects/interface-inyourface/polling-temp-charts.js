@@ -60,8 +60,8 @@ $(document).ready(function () {
     const ajax = {
       highest: 0,
       lowest: 100,
-      highID: "#ajax-highest",
-      lowID: "#ajax-lowest",
+      highID: "ajax-highest",
+      lowID: "ajax-lowest",
     };
     const ws = {
       highest: 0,
