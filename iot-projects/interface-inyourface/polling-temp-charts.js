@@ -133,7 +133,17 @@ $(document).ready(function () {
     }
     setInterval(doJSONPoll, 2000);
     // TODO 6: AJAX Polling
-
+    function doAJAXPoll() {
+      $.ajax({
+        url: "http://localhost:8080/",
+        method: "GET",
+        dataType: "json",
+        success: function (result) {
+          addDataPoint(result, ajaxData, ajaxChart);
+          // Fill in the body of the success function
+        },
+      });
+    }
     // TODO 7: WebSocket Polling
 
     // Do not work below this line
