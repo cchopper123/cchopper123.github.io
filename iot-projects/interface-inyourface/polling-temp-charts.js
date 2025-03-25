@@ -146,7 +146,7 @@ $(document).ready(function () {
         },
       });
     }
-    setInterval(doAJAXPoll, 2000);
+    setInterval(doAJAXPoll, 1500);
     // TODO 7: WebSocket Polling
 
     // Do not work below this line
