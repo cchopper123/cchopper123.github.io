@@ -123,7 +123,7 @@ $(document).ready(function () {
     function doJSONPoll() {
       $.getJSON("http://localhost:8080/", function (result) {
         // Callback code will go here in the next steps
-        addDataPoint(wsData, wsChart);
+        addDataPoint(ajaxData, ajaxChart);
         addDataPoint(jsonData, jsonChart);
         addDataPoint(wsData, wsChart);
         updateAjaxRecords(result.value);
