@@ -1,5 +1,8 @@
 ///////////////////////////////////////////////////////////
 ////////////////// JAVASCRIPT BEGINS HERE /////////////////
+
+const { errorMonitor } = require("ws");
+
 ///////////////////////////////////////////////////////////
 $(document).ready(function () {
   // Chart initialization code
@@ -148,7 +151,7 @@ $(document).ready(function () {
     }
     setInterval(doAJAXPoll, 1500);
     // TODO 7: WebSocket Polling
-    var socket = new WebSocket("ws://<ngrok-url>/pi/sensors/dht/temperature");
+    var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
       var result = JSON.parse(event.data);
       addDataPoint(result, wsData, wsChart);
@@ -157,6 +160,7 @@ $(document).ready(function () {
 
     socket.onerror = function (error) {
       // Code for handling errors will go here
+      console.error("WebSocket error:", error);
     };
     // Do not work below this line
     function getTime() {
