@@ -41,8 +41,13 @@ const server = http.createServer(function (req, res) {
 
 //TODO 7: WebSocket Server
 const wss = new WebSocket.Server({ server });
-setInterval(function (socket) {
-  wss.on;
-}, 1000);
+wss.on("connection", function (socket) {
+  setInterval(function () {
+    if (socket.readyState === WebSocket.OPEN) {
+      socket.send(JSON.stringify({ value: temperature }));
+    }
+  }, 1000);
+});
+
 /* DO NOT EDIT THIS CODE */
 server.listen(port);

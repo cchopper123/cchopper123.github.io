@@ -148,7 +148,16 @@ $(document).ready(function () {
     }
     setInterval(doAJAXPoll, 1500);
     // TODO 7: WebSocket Polling
+    var socket = new WebSocket("ws://<ngrok-url>/pi/sensors/dht/temperature");
+    socket.onmessage = function (event) {
+      var result = JSON.parse(event.data);
+      addDataPoint(result, wsData, wsChart);
+      updateWSRecords(result.value);
+    };
 
+    socket.onerror = function (error) {
+      // Code for handling errors will go here
+    };
     // Do not work below this line
     function getTime() {
       var d = new Date();
