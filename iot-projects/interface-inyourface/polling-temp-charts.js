@@ -151,7 +151,9 @@ $(document).ready(function () {
     }
     setInterval(doAJAXPoll, 1500);
     // TODO 7: WebSocket Polling
-    var socket = new WebSocket("ws://localhost:8080");
+    var socket = new WebSocket(
+      "ws://localhost:8080/pi/sensors/dht/temperature"
+    );
     socket.onmessage = function (event) {
       var result = JSON.parse(event.data);
       addDataPoint(result, wsData, wsChart);
