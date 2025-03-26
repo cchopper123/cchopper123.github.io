@@ -1,8 +1,6 @@
 ///////////////////////////////////////////////////////////
 ////////////////// JAVASCRIPT BEGINS HERE /////////////////
 
-const { errorMonitor } = require("ws");
-
 ///////////////////////////////////////////////////////////
 $(document).ready(function () {
   // Chart initialization code
@@ -69,8 +67,8 @@ $(document).ready(function () {
     const ws = {
       highest: 0,
       lowest: 100,
-      highID: "#ws-highest",
-      lowID: "#ws-lowest",
+      highID: "ws-highest",
+      lowID: "ws-lowest",
     };
     $("#json-chart-container").append(
       `<p id=${json.highID}>Highest recorded JSON value is ${json.highest}</p>`
@@ -151,9 +149,7 @@ $(document).ready(function () {
     }
     setInterval(doAJAXPoll, 1500);
     // TODO 7: WebSocket Polling
-    var socket = new WebSocket(
-      "ws://localhost:8080/pi/sensors/dht/temperature"
-    );
+    var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
       var result = JSON.parse(event.data);
       addDataPoint(result, wsData, wsChart);
