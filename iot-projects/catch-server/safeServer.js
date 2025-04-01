@@ -5,7 +5,7 @@ function requestListener(req, res) {
   try {
     if (req.method === "GET") {
       res.writeHead(200, { "Content-Type": "text/plain" });
-      res.write(serverStatus.message);
+      res.write(serverStatus.status);
     } else if (req.method === "PUT") {
       var body = "";
       req.on("data", function (data) {
