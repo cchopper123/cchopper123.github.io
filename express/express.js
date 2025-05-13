@@ -1,21 +1,20 @@
 const express = require('express')
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
+const mid1 = (req,res, next) =>{
+
+}
+const mid2 = (req,res, next) =>{
+    
+}
+const mid3 = (req,res, next) =>{
+    
+}
+app.use(mid1);
+app.use(mid2);
+app.use(mid3);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
-
-function mid1(){
-
-}
-function mid2(){
-    
-}
-function mid3(){
-    
-}
