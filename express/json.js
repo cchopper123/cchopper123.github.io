@@ -8,8 +8,15 @@ let data = [
   { name: "Snatch", age: "2000" },
 ];
 
-let transform = { "<>": "div", text: "${name} ${age}" };
+let transform = { 
+    "<>": "div", 
+    html: [
+        {"<>": "p", text:"${name}"}, 
+        {"<>": "h1", text:"${age}"}, 
+    ],
+};
 let html = json2html(render(data, transform));
+
 
 console.log(html.split("><").join(">\n<"));
 
