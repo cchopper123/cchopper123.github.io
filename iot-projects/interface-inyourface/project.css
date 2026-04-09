@@ -31,39 +31,68 @@ nav header {
 main {
   background: rgb(245, 238, 219);
 }
-#json-chart-container {
-  margin-right: 25px;
-  padding: 10px;
-  width: 40%;
-}
-#ajax-chart-container {
-  margin-right: 25px;
-  padding: 10px;
-  width: 40%;
-}
-#ws-chart-container {
-  margin-right: 25px;
-  padding: 10px;
-  width: 40%;
-}
-#json-chart {
-  margin-right: 25px;
-  padding: 10px;
-  width: 100%;
-  height: 300px;
-}
-#ajax-chart {
-  margin-right: 25px;
-  padding: 10px;
-  width: 100%;
-  height: 300px;
-}
-#ws-chart {
-  margin-right: 25px;
-  padding: 10px;
-  width: 100%;
-  height: 300px;
-}
+
 p {
   padding: 10px;
+}
+
+#sim-chart-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+#air-chart-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+#json-sim-chart-container {
+  margin-right: 25px;
+  padding: 10px;
+  width: 40%;
+  border: 4px solid red;
+}
+#ws-sim-chart-container {
+  margin-right: 25px;
+  padding: 10px;
+  width: 40%;
+  border: 4px solid blue;
+}
+#ajax-temp-chart-container {
+  margin-right: 25px;
+  padding: 10px;
+  width: 40%;
+  border: 4px solid plum;
+}
+#ajax-air-chart-container {
+  margin-right: 25px;
+  padding: 10px;
+  width: 40%;
+  border: 4px solid purple;
+}
+#json-sim-chart {
+  margin-right: 25px;
+  padding: 10px;
+  width: 100%;
+  height: 300px;
+}
+#ws-sim-chart {
+  margin-right: 25px;
+  padding: 10px;
+  width: 100%;
+  height: 300px;
+}
+#ajax-temp-chart {
+  margin-right: 25px;
+  padding: 10px;
+  width: 100%;
+  height: 300px;
+}
+#ajax-air-chart {
+  margin-right: 25px;
+  padding: 10px;
+  width: 100%;
+  height: 300px;
 }
