@@ -9,6 +9,7 @@ const port = 8080;
 
 var temperature = 72;
 var nextChange = 0;
+
 function generateTemperature() {
   let changeDifference = Math.random() - 0.5;
   nextChange += changeDifference;
@@ -48,6 +49,6 @@ wss.on("connection", function (socket) {
     }
   }, 1000);
 });
-
+function doPurpleAirAJAXPollTemp() {}
 /* DO NOT EDIT THIS CODE */
 server.listen(port);

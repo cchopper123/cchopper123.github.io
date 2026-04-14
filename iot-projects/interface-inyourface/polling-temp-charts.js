@@ -52,74 +52,88 @@ $(document).ready(function () {
     }
 
     // TODO 3: Initialize high and low records
-    const json = {
+    const jsonSim = {
       highest: 0,
       lowest: 100,
-      highID: "json-highest",
-      lowID: "json-lowest",
+      highID: "json-sim-highest",
+      lowID: "json-sim-lowest",
     };
-    const ajax = {
+    const ajaxSim = {
       highest: 0,
       lowest: 100,
-      highID: "ajax-highest",
-      lowID: "ajax-lowest",
+      highID: "ajax-sim-highest",
+      lowID: "ajax-sim-lowest",
     };
-    const ws = {
+    const wsSim = {
       highest: 0,
       lowest: 100,
-      highID: "ws-highest",
-      lowID: "ws-lowest",
+      highID: "ws-sim-highest",
+      lowID: "ws-sim-lowest",
     };
     $("#json-chart-container").append(
-      `<p id=${json.highID}>Highest recorded JSON value is ${json.highest}</p>`
+      `<p id=${jsonSim.highID}>Highest recorded JSON value is ${jsonSim.highest}</p>`,
     );
     $("#json-chart-container").append(
-      `<p id=${json.lowID}>Lowest recorded JSON value is ${json.lowest}</p>`
+      `<p id=${jsonSim.lowID}>Lowest recorded JSON value is ${jsonSim.lowest}</p>`,
     );
     $("#ajax-chart-container").append(
-      `<p id=${ajax.highID}>Highest recorded Ajax value is ${ajax.highest}</p>`
+      `<p id=${ajaxSim.highID}>Highest recorded Ajax value is ${ajaxSim.highest}</p>`,
     );
     $("#ajax-chart-container").append(
-      `<p id=${ajax.lowID}>Lowest recorded Ajax value is ${ajax.lowest}</p>`
+      `<p id=${ajaxSim.lowID}>Lowest recorded Ajax value is ${ajaxSim.lowest}</p>`,
     );
     $("#ws-chart-container").append(
-      `<p id=${ws.highID}>Highest recorded WS value is ${ws.highest}</p>`
+      `<p id=${wsSim.highID}>Highest recorded WS value is ${wsSim.highest}</p>`,
     );
     $("#ws-chart-container").append(
-      `<p id=${ws.lowID}>Lowest recorded WS value is ${ws.lowest}</p>`
+      `<p id=${wsSim.lowID}>Lowest recorded WS value is ${wsSim.lowest}</p>`,
     );
 
     // TODO 4: Update high and low records
-    function updateJSONRecords(value) {
-      if (value > json.highest) {
-        json.highest = value;
-        $("#json-highest").text(`Highest recorded value is ${json.highest}`);
+    function updateRecords(value, object) {
+      if (value > object.highest) {
+        object.highest = value;
+        $(`#${object.highID}`).text(
+          `Highest recorded value is ${object.highest}`,
+        );
       }
-      if (value < json.lowest) {
-        json.lowest = value;
-        $("#json-lowest").text(`Lowest recorded value is ${json.lowest}`);
+      if (value < object.lowest) {
+        object.lowest = value;
+        $(`#${object.lowID}`).text(`Lowest recorded value is ${object.lowest}`);
       }
+      console.log(object, highID, lowID);
+      // }
+      // function updateJSONRecords(value) {
+      //   if (value > jsonSim.highest) {
+      //     jsonSim.highest = value;
+      //     $("#json-sim-highest").text(`Highest recorded value is ${jsonSim.highest}`);
+      //   }
+      //   if (value < jsonSim.lowest) {
+      //     jsonSim.lowest = value;
+      //     $("#json-sim-lowest").text(`Lowest recorded value is ${jsonSim.lowest}`);
+      //   }
+      // // }
+      // function updateAjaxRecords(value) {
+      //   if (value > ajaxSim.highest) {
+      //     ajaxSim.highest = value;
+      //     $("#ajax-sim-highest").text(`Highest recorded value is ${ajaxSim.highest}`);
+      //   }
+      //   if (value < ajaxSim.lowest) {
+      //     ajaxSim.lowest = value;
+      //     $("#ajax-sim-lowest").text(`Lowest recorded value is ${ajaxSim.lowest}`);
+      //   }
+      // }
+      // function updateWSRecords(value) {
+      //   if (value > wsSim.highest) {
+      //     wsSim.highest = value;
+      //     $("#ws-sim-highest").text(`Highest recorded value is ${wsSim.highest}`);
+      //   }
+      //   if (value < wsSim.lowest) {
+      //     wsSim.lowest = value;
+      //     $("#ws-sim-lowest").text(`Lowest recorded value is ${wsSim.lowest}`);
+      //   }
     }
-    function updateAjaxRecords(value) {
-      if (value > ajax.highest) {
-        ajax.highest = value;
-        $("#ajax-highest").text(`Highest recorded value is ${ajax.highest}`);
-      }
-      if (value < ajax.lowest) {
-        ajax.lowest = value;
-        $("#ajax-lowest").text(`Lowest recorded value is ${ajax.lowest}`);
-      }
-    }
-    function updateWSRecords(value) {
-      if (value > ws.highest) {
-        ws.highest = value;
-        $("#ws-highest").text(`Highest recorded value is ${ws.highest}`);
-      }
-      if (value < ws.lowest) {
-        ws.lowest = value;
-        $("#ws-lowest").text(`Lowest recorded value is ${ws.lowest}`);
-      }
-    }
+
     // TODO 5: Regular JSON Polling
     function doJSONPoll() {
       $.getJSON("http://localhost:8080/", function (result) {
