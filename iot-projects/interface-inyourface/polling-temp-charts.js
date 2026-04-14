@@ -197,14 +197,14 @@ $(document).ready(function () {
       $.ajax({
         url: "https://api.purpleair.com/v1/sensors/300625?fields=temperature",
         method: "GET",
-        dataType: "json",
+        //dataType: "json",
         headers: {
           "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123"
         },
         success: function (result) {
           addDataPoint(result, ajaxTempData, ajaxTempChart);
-          console.log("Temperature result received:", result);
-          updateRecords(ajaxTemp, result.value);
+          console.log("Temperature result received:", result.sensor.temperature);
+          updateRecords(ajaxTemp, result.sensor.temperature);
           // Fill in the body of the success function
         },
         error: function (error) {
@@ -212,12 +212,15 @@ $(document).ready(function () {
         },
       });
     }
-    setInterval(doPurpleAirAJAXPollTemp, 1000);
+    setInterval(doPurpleAirAJAXPollTemp, 5000);
 
     // TODO 7: WebSocket Polling
     var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
       var result = JSON.parse(event.data);
+      if (result){
+        console.log("Got result!!");
+      }
       addDataPoint(result, wsSimData, wsSimChart);
       console.log("WebSocket message received:", result);
       updateRecords(wsSim, result.value);
@@ -232,14 +235,15 @@ $(document).ready(function () {
       $.ajax({
         url: "https://api.purpleair.com/v1/sensors/300625?fields=pm2.5",
         method: "GET",
-        dataType: "json",
+        //dataType: "json",
         headers: {
           "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123"
         },
         success: function (result) {
           addDataPoint(result, ajaxAirData, ajaxAirChart);
-          console.log("Air quality result received:", result);
-          updateRecords(ajaxAir, result.value);
+          console.log(result);
+          console.log("Air quality result received:", result.sensor.pm2_5);
+          updateRecords(ajaxAir, result.sensor.pm2_5);
           // Fill in the body of the success function
         },
         error: function (error) {
