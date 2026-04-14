@@ -1,6 +1,7 @@
 // A server that simulates a device that is taking regular temperature readings.
 
 // Load the http module to create an http server.
+const { error } = require("console");
 const http = require("http");
 const WebSocket = require("ws");
 const port = 8080;
@@ -49,9 +50,11 @@ wss.on("connection", function (socket) {
     if (socket.readyState === WebSocket.OPEN) {
       socket.send(JSON.stringify({ value: temperature }));
       console.log("Success");
-    }
-    else {
-      console.log("WebSocket connection is not open.");
+    } else {
+      console.error("WebSocket connection is not open.");
+      console.log(error);
+      console.log(socket.readyState);
+      console.log(error.message);
     }
   }, 1000);
 });

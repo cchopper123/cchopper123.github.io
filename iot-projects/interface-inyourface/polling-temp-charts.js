@@ -182,6 +182,7 @@ $(document).ready(function () {
         // addDataPoint(result, ajaxData, ajaxChart);
 
         addDataPoint(result, jsonSimData, jsonSimChart);
+        console.log("JSON polling result received:", result);
         // addDataPoint(result, wsData, wsChart);
         // updateAjaxRecords(result.value);
         updateRecords(jsonSim, result.value);
@@ -202,7 +203,7 @@ $(document).ready(function () {
         },
         success: function (result) {
           addDataPoint(result, ajaxTempData, ajaxTempChart);
-          console.log("Result received");
+          console.log("Temperature result received:", result);
           updateRecords(ajaxTemp, result.value);
           // Fill in the body of the success function
         },
@@ -217,8 +218,8 @@ $(document).ready(function () {
     var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
       var result = JSON.parse(event.data);
-      console.log("Result received");
       addDataPoint(result, wsSimData, wsSimChart);
+      console.log("WebSocket message received:", result);
       updateRecords(wsSim, result.value);
     };
 
@@ -237,6 +238,7 @@ $(document).ready(function () {
         },
         success: function (result) {
           addDataPoint(result, ajaxAirData, ajaxAirChart);
+          console.log("Air quality result received:", result);
           updateRecords(ajaxAir, result.value);
           // Fill in the body of the success function
         },
