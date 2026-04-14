@@ -198,7 +198,7 @@ $(document).ready(function () {
         method: "GET",
         dataType: "json",
         headers: {
-          "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123",
+          "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123"
         },
         success: function (result) {
           addDataPoint(result, ajaxTempData, ajaxTempChart);
@@ -232,7 +232,7 @@ $(document).ready(function () {
         method: "GET",
         dataType: "json",
         headers: {
-          "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123",
+          "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123"
         },
         success: function (result) {
           addDataPoint(result, ajaxAirData, ajaxAirChart);
