@@ -202,6 +202,7 @@ $(document).ready(function () {
         },
         success: function (result) {
           addDataPoint(result, ajaxTempData, ajaxTempChart);
+          console.log("Result received");
           updateRecords(ajaxTemp, result.value);
           // Fill in the body of the success function
         },
@@ -244,7 +245,7 @@ $(document).ready(function () {
         },
       });
     }
-    setInterval(doPurpleAirAJAXPollAir, 5000);
+    setInterval(doPurpleAirAJAXPollAir, 3000);
 
     // Do not work below this line
     function getTime() {
