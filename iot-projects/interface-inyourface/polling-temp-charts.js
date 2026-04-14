@@ -107,10 +107,6 @@ $(document).ready(function () {
       `<p id=${wsSim.highID}>Highest recorded WS value is ${wsSim.highest}</p>`,
     );
     $("#ws-sim-chart-container").append(
-      `<p id=${wsSim.highID}>Highest recorded WS value is ${wsSim.highest}</p>`,
-    );
-
-    $("#ws-sim-chart-container").append(
       `<p id=${wsSim.lowID}>Lowest recorded WS value is ${wsSim.lowest}</p>`,
     );
 
