@@ -13,22 +13,33 @@ $(document).ready(function () {
     /////////////////////////////////////////////////
     // CHART PREP SECTION: DO NOT TOUCH /////////////
     /////////////////////////////////////////////////
-    var jsonChart = new google.visualization.LineChart($("#json-chart")[0]);
-    var ajaxChart = new google.visualization.LineChart($("#ajax-chart")[0]);
-    var wsChart = new google.visualization.LineChart($("#ws-chart")[0]);
-    var jsonData = google.visualization.arrayToDataTable([
-      ["Time", "JSON Polling Temperature"],
+    var jsonSimChart = new google.visualization.LineChart(
+      $("#json-sim-chart")[0],
+    );
+    var wsSimChart = new google.visualization.LineChart($("#ws-sim-chart")[0]);
+    var ajaxTempChart = new google.visualization.LineChart(
+      $("#ajax-temp-chart")[0],
+    );
+    var ajaxAirChart = new google.visualization.LineChart(
+      $("#ajax-air-chart")[0],
+    );
+    var jsonSimData = google.visualization.arrayToDataTable([
+      ["Time", "JSON Simulation Polling Temperature"],
       [getTime(), 0],
     ]);
-    var ajaxData = google.visualization.arrayToDataTable([
-      ["Time", "AJAX Polling Temperature"],
+    var wsSimData = google.visualization.arrayToDataTable([
+      ["Time", "WebSocket Simulation Polling Temperature"],
       [getTime(), 0],
     ]);
-    var wsData = google.visualization.arrayToDataTable([
-      ["Time", "WebSocket Polling Temperature"],
+    var ajaxTempData = google.visualization.arrayToDataTable([
+      ["Time", "AJAX Purple Air Polling Temperature"],
       [getTime(), 0],
     ]);
-
+    var ajaxAirData = google.visualization.arrayToDataTable([
+      ["Time", "AJAX Purple Air Polling Quality"],
+      [getTime(), 0],
+    ]);
+    
     var options = {
       title: "Temperature",
       curveType: "function",
