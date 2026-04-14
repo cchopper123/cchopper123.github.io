@@ -21,7 +21,7 @@ function generateTemperature() {
     temperature = 100;
     nextChange = 0;
   }
-  console.log(temperature);
+  //console.log(temperature);
 }
 setInterval(generateTemperature, 1000);
 

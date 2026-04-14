@@ -131,17 +131,17 @@ $(document).ready(function () {
     );
 
     // TODO 4: Update high and low records
-    function updateRecords(value, object) {
-      console.log("Updating records with value:", object, value, object.id);
-      if (value > object.highest) {
-        object.highest = value;
-        $(`#${object.highID}`).text(
-          `Highest recorded value is ${object.highest}`,
+    function updateRecords(value, record) {
+      //console.log("Updating records with value:", object, value, object.id);
+      if (value > record.highest) {
+        record.highest = value;
+        $(`#${record.highID}`).text(
+          `Highest recorded value is ${record.highest}`,
         );
       }
-      if (value < object.lowest) {
-        object.lowest = value;
-        $(`#${object.lowID}`).text(`Lowest recorded value is ${object.lowest}`);
+      if (value < record.lowest) {
+        record.lowest = value;
+        $(`#${record.lowID}`).text(`Lowest recorded value is ${record.lowest}`);
       }
       //console.log(object, highID, lowID);
       // }
@@ -197,6 +197,7 @@ $(document).ready(function () {
       $.ajax({
         url: "https://api.purpleair.com/v1/sensors/300625?fields=temperature",
         method: "GET",
+        dataType: "json",
         headers: {
           "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123",
         },
@@ -210,7 +211,7 @@ $(document).ready(function () {
         }
       });
     }
-    setInterval(doPurpleAirAJAXPollTemp, 30000);
+    setInterval(doPurpleAirAJAXPollTemp, 1000);
 
     // TODO 7: WebSocket Polling
     var socket = new WebSocket("ws://localhost:8080");
@@ -230,6 +231,7 @@ $(document).ready(function () {
       $.ajax({
         url: "https://api.purpleair.com/v1/sensors/300625?fields=pm2.5",
         method: "GET",
+        dataType: "json",
         headers: {
           "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123",
         },
@@ -243,7 +245,7 @@ $(document).ready(function () {
         }
       });
     }
-    setInterval(doPurpleAirAJAXPollAir, 30000);
+    setInterval(doPurpleAirAJAXPollAir, 5000);
 
     // Do not work below this line
     function getTime() {
