@@ -220,7 +220,7 @@ $(document).ready(function () {
     };
     function doPurpleAirAJAXPollTemp() {
       $.ajax({
-        url: "https://api.purpleair.com/v1/sensors/300625?fields=temperature",
+        url: "https://api.purpleair.com/v1/sensors/300625?fields=pm2.5",
         method: "GET",
         headers: {
           "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123",
@@ -236,6 +236,7 @@ $(document).ready(function () {
       });
     }
     setInterval(doPurpleAirAJAXPollTemp, 3000);
+
     // Do not work below this line
     function getTime() {
       var d = new Date();
