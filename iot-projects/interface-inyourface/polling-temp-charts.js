@@ -210,6 +210,7 @@ $(document).ready(function () {
     var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
       var result = JSON.parse(event.data);
+      console.log("Result received");
       addDataPoint(result, wsSimData, wsSimChart);
       updateRecords(result.value, wsSim);
     };
@@ -227,7 +228,7 @@ $(document).ready(function () {
         },
         success: function (result) {
           addDataPoint(result, ajaxAirData, ajaxAirChart);
-          updateAjaxRecords(result.value, ajaxAir);
+          updateRecords(result.value, ajaxAir);
           // Fill in the body of the success function
           },
         error: function (error) {
@@ -235,7 +236,7 @@ $(document).ready(function () {
         }
       });
     }
-    setInterval(doPurpleAirAJAXPollTemp, 3000);
+    setInterval(doPurpleAirAJAXPollTemp, 30000);
 
     // Do not work below this line
     function getTime() {
