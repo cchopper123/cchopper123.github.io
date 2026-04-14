@@ -58,34 +58,59 @@ $(document).ready(function () {
       highID: "json-sim-highest",
       lowID: "json-sim-lowest",
     };
-    const ajaxSim = {
+    const ajaxTemp = {
       highest: 0,
       lowest: 100,
-      highID: "ajax-sim-highest",
-      lowID: "ajax-sim-lowest",
+      highID: "ajax-temp-highest",
+      lowID: "ajax-temp-lowest",
     };
+
+    const ajaxAir = {
+      highest: 0,
+      lowest: 100,
+      highID: "ajax-air-highest",
+      lowID: "ajax-air-lowest",
+    };
+
     const wsSim = {
       highest: 0,
       lowest: 100,
       highID: "ws-sim-highest",
       lowID: "ws-sim-lowest",
     };
-    $("#json-chart-container").append(
+
+    $("#json-sim-chart-container").append(
       `<p id=${jsonSim.highID}>Highest recorded JSON value is ${jsonSim.highest}</p>`,
     );
-    $("#json-chart-container").append(
+
+    $("#json-sim-chart-container").append(
       `<p id=${jsonSim.lowID}>Lowest recorded JSON value is ${jsonSim.lowest}</p>`,
     );
-    $("#ajax-chart-container").append(
-      `<p id=${ajaxSim.highID}>Highest recorded Ajax value is ${ajaxSim.highest}</p>`,
+
+    //temperature polling records
+    $("#ajax-temp-chart-container").append(
+      `<p id=${ajaxTemp.highID}>Highest recorded Ajax value is ${ajaxTemp.highest}</p>`,
     );
-    $("#ajax-chart-container").append(
-      `<p id=${ajaxSim.lowID}>Lowest recorded Ajax value is ${ajaxSim.lowest}</p>`,
+    $("#ajax-temp-chart-container").append(
+      `<p id=${ajaxTemp.lowID}>Lowest recorded Ajax value is ${ajaxTemp.lowest}</p>`,
     );
-    $("#ws-chart-container").append(
+
+    $("#ajax-air-chart-container").append(
+      `<p id=${ajaxAir.highID}>Highest recorded Ajax value is ${ajaxAir.highest}</p>`,
+    );
+    $("#ajax-air-chart-container").append(
+      `<p id=${ajaxAir.lowID}>Lowest recorded Ajax value is ${ajaxAir.lowest}</p>`,
+    );
+
+    //websockect polling records
+    $("#ws-sim-chart-container").append(
       `<p id=${wsSim.highID}>Highest recorded WS value is ${wsSim.highest}</p>`,
     );
-    $("#ws-chart-container").append(
+    $("#ws-sim-chart-container").append(
+      `<p id=${wsSim.highID}>Highest recorded WS value is ${wsSim.highest}</p>`,
+    );
+
+    $("#ws-sim-chart-container").append(
       `<p id=${wsSim.lowID}>Lowest recorded WS value is ${wsSim.lowest}</p>`,
     );
 

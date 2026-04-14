@@ -21,9 +21,10 @@ function generateTemperature() {
     temperature = 100;
     nextChange = 0;
   }
-  console.log(temperature);
+  //console.log(temperature);
 }
 setInterval(generateTemperature, 1000);
+
 // Configure our HTTP server.
 const server = http.createServer(function (req, res) {
   /* DO NOT EDIT THIS CODE */
