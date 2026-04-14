@@ -27,7 +27,7 @@ $(document).ready(function () {
     );
 
     ///////
-    //DATA HERE 
+    //DATA HERE
     //////
 
     var jsonSimData = google.visualization.arrayToDataTable([
@@ -46,7 +46,6 @@ $(document).ready(function () {
       ["Time", "AJAX Purple Air Polling Quality"],
       [getTime(), 0],
     ]);
-
 
     var options = {
       title: "Temperature",
@@ -131,7 +130,7 @@ $(document).ready(function () {
     );
 
     // TODO 4: Update high and low records
-    function updateRecords(value, record) {
+    function updateRecords(record, value) {
       //console.log("Updating records with value:", object, value, object.id);
       if (value > record.highest) {
         record.highest = value;
@@ -185,7 +184,7 @@ $(document).ready(function () {
         addDataPoint(result, jsonSimData, jsonSimChart);
         // addDataPoint(result, wsData, wsChart);
         // updateAjaxRecords(result.value);
-        updateRecords(result.value, jsonSim);
+        updateRecords(jsonSim, result.value);
         // updateWSRecords(result.value);
       });
     }
@@ -203,12 +202,12 @@ $(document).ready(function () {
         },
         success: function (result) {
           addDataPoint(result, ajaxTempData, ajaxTempChart);
-          updateRecords(result.value, ajaxTemp);
+          updateRecords(ajaxTemp, result.value);
           // Fill in the body of the success function
-          },
+        },
         error: function (error) {
           console.error("AJAX error:", error);
-        }
+        },
       });
     }
     setInterval(doPurpleAirAJAXPollTemp, 1000);
@@ -219,7 +218,7 @@ $(document).ready(function () {
       var result = JSON.parse(event.data);
       console.log("Result received");
       addDataPoint(result, wsSimData, wsSimChart);
-      updateRecords(result.value, wsSim);
+      updateRecords(wsSim, result.value);
     };
 
     socket.onerror = function (error) {
@@ -237,12 +236,12 @@ $(document).ready(function () {
         },
         success: function (result) {
           addDataPoint(result, ajaxAirData, ajaxAirChart);
-          updateRecords(result.value, ajaxAir);
+          updateRecords(ajaxAir, result.value);
           // Fill in the body of the success function
-          },
+        },
         error: function (error) {
           console.error("AJAX error:", error);
-        }
+        },
       });
     }
     setInterval(doPurpleAirAJAXPollAir, 5000);
