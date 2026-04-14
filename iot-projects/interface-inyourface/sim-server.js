@@ -21,7 +21,7 @@ function generateTemperature() {
     temperature = 100;
     nextChange = 0;
   }
-  //console.log(temperature);
+  console.log(temperature);
 }
 setInterval(generateTemperature, 1000);
 
@@ -44,9 +44,13 @@ const server = http.createServer(function (req, res) {
 //TODO 7: WebSocket Server
 const wss = new WebSocket.Server({ server });
 wss.on("connection", function (socket) {
+  console.log("Trying to connect to WebSocket");
   setInterval(function () {
     if (socket.readyState === WebSocket.OPEN) {
       socket.send(JSON.stringify({ value: temperature }));
+    }
+    else {
+      console.log("WebSocket connection is not open.");
     }
   }, 1000);
 });

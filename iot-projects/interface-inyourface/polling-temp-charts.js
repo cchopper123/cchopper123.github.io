@@ -13,10 +13,12 @@ $(document).ready(function () {
     /////////////////////////////////////////////////
     // CHART PREP SECTION: DO NOT TOUCH /////////////
     /////////////////////////////////////////////////
+
     var jsonSimChart = new google.visualization.LineChart(
       $("#json-sim-chart")[0],
     );
     var wsSimChart = new google.visualization.LineChart($("#ws-sim-chart")[0]);
+    
     var ajaxTempChart = new google.visualization.LineChart(
       $("#ajax-temp-chart")[0],
     );
@@ -44,7 +46,7 @@ $(document).ready(function () {
       ["Time", "AJAX Purple Air Polling Quality"],
       [getTime(), 0],
     ]);
-    
+
 
     var options = {
       title: "Temperature",
@@ -111,6 +113,7 @@ $(document).ready(function () {
     $("#ajax-temp-chart-container").append(
       `<p id=${ajaxTemp.lowID}>Lowest recorded Ajax value is ${ajaxTemp.lowest}</p>`,
     );
+    //air
 
     $("#ajax-air-chart-container").append(
       `<p id=${ajaxAir.highID}>Highest recorded Ajax value is ${ajaxAir.highest}</p>`,
