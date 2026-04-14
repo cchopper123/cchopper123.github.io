@@ -18,7 +18,7 @@ $(document).ready(function () {
       $("#json-sim-chart")[0],
     );
     var wsSimChart = new google.visualization.LineChart($("#ws-sim-chart")[0]);
-    
+
     var ajaxTempChart = new google.visualization.LineChart(
       $("#ajax-temp-chart")[0],
     );
@@ -132,6 +132,7 @@ $(document).ready(function () {
 
     // TODO 4: Update high and low records
     function updateRecords(value, object) {
+      console.log("Updating records with value:", object, value, object.name);
       if (value > object.highest) {
         object.highest = value;
         $(`#${object.highID}`).text(
@@ -142,7 +143,7 @@ $(document).ready(function () {
         object.lowest = value;
         $(`#${object.lowID}`).text(`Lowest recorded value is ${object.lowest}`);
       }
-      console.log(object, highID, lowID);
+      //console.log(object, highID, lowID);
       // }
       // function updateJSONRecords(value) {
       //   if (value > jsonSim.highest) {
