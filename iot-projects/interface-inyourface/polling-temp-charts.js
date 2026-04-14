@@ -175,7 +175,7 @@ $(document).ready(function () {
         addDataPoint(result, jsonData, jsonChart);
         // addDataPoint(result, wsData, wsChart);
         // updateAjaxRecords(result.value);
-        updateRecords(result.value, jsonSim);
+        updateRecords(result.value);
         // updateWSRecords(result.value);
       });
     }
@@ -195,7 +195,7 @@ $(document).ready(function () {
       });
     }
     setInterval(doAJAXPoll, 1500);
-    
+
     // TODO 7: WebSocket Polling
     var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
