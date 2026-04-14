@@ -23,6 +23,11 @@ $(document).ready(function () {
     var ajaxAirChart = new google.visualization.LineChart(
       $("#ajax-air-chart")[0],
     );
+
+    ///////
+    //DATA HERE 
+    //////
+
     var jsonSimData = google.visualization.arrayToDataTable([
       ["Time", "JSON Simulation Polling Temperature"],
       [getTime(), 0],
@@ -39,6 +44,7 @@ $(document).ready(function () {
       ["Time", "AJAX Purple Air Polling Quality"],
       [getTime(), 0],
     ]);
+    
 
     var options = {
       title: "Temperature",
@@ -172,10 +178,10 @@ $(document).ready(function () {
         // Callback code will go here in the next steps
         // addDataPoint(result, ajaxData, ajaxChart);
 
-        addDataPoint(result, jsonData, jsonChart);
+        addDataPoint(result, jsonSimData, jsonSimChart);
         // addDataPoint(result, wsData, wsChart);
         // updateAjaxRecords(result.value);
-        updateRecords(result.value);
+        updateRecords(result.value, jsonSim);
         // updateWSRecords(result.value);
       });
     }
@@ -188,7 +194,7 @@ $(document).ready(function () {
         method: "GET",
         dataType: "json",
         success: function (result) {
-          addDataPoint(result, ajaxData, ajaxChart);
+          addDataPoint(result, ajaxTempData, ajaxTempChart);
           updateRecords(result.value, ajaxTemp);
           // Fill in the body of the success function
         },
@@ -200,14 +206,15 @@ $(document).ready(function () {
     var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
       var result = JSON.parse(event.data);
-      addDataPoint(result, wsData, wsChart);
-      updateWSRecords(result.value);
+      addDataPoint(result, wsSimData, wsSimChart);
+      updateRecords(result.value, wsSim);
     };
 
     socket.onerror = function (error) {
       // Code for handling errors will go here
       console.error("WebSocket error:", error);
     };
+    
     // Do not work below this line
     function getTime() {
       var d = new Date();
