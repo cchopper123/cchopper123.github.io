@@ -39,7 +39,7 @@ $(document).ready(function () {
       ["Time", "AJAX Purple Air Polling Quality"],
       [getTime(), 0],
     ]);
-    
+
     var options = {
       title: "Temperature",
       curveType: "function",
@@ -175,11 +175,12 @@ $(document).ready(function () {
         addDataPoint(result, jsonData, jsonChart);
         // addDataPoint(result, wsData, wsChart);
         // updateAjaxRecords(result.value);
-        updateJSONRecords(result.value);
+        updateRecords(result.value, jsonSim);
         // updateWSRecords(result.value);
       });
     }
-    setInterval(doJSONPoll, 2000);
+
+    setInterval(doJSONPoll, 5000);
     // TODO 6: AJAX Polling
     function doAJAXPoll() {
       $.ajax({
@@ -188,12 +189,13 @@ $(document).ready(function () {
         dataType: "json",
         success: function (result) {
           addDataPoint(result, ajaxData, ajaxChart);
-          updateAjaxRecords(result.value);
+          updateRecords(result.value, ajaxTemp);
           // Fill in the body of the success function
         },
       });
     }
     setInterval(doAJAXPoll, 1500);
+    
     // TODO 7: WebSocket Polling
     var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
