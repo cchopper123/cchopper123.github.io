@@ -48,12 +48,13 @@ wss.on("connection", function (socket) {
   setInterval(function () {
     if (socket.readyState === WebSocket.OPEN) {
       socket.send(JSON.stringify({ value: temperature }));
+      console.log("Success");
     }
     else {
       console.log("WebSocket connection is not open.");
     }
   }, 1000);
 });
-function doPurpleAirAJAXPollTemp() {}
+
 /* DO NOT EDIT THIS CODE */
 server.listen(port);

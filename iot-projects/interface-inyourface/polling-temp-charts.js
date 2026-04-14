@@ -218,7 +218,24 @@ $(document).ready(function () {
       // Code for handling errors will go here
       console.error("WebSocket error:", error);
     };
-    
+    function doPurpleAirAJAXPollTemp() {
+      $.ajax({
+        url: "https://api.purpleair.com/v1/sensors/300625?fields=temperature",
+        method: "GET",
+        headers: {
+          "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123",
+        },
+        success: function (result) {
+          addDataPoint(result, ajaxAirData, ajaxAirChart);
+          updateAjaxRecords(result.value, ajaxAir);
+          // Fill in the body of the success function
+          },
+        error: function (error) {
+          console.error("AJAX error:", error);
+        }
+      });
+    }
+    setInterval(doPurpleAirAJAXPollTemp, 3000);
     // Do not work below this line
     function getTime() {
       var d = new Date();
