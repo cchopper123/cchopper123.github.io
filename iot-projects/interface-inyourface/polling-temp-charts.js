@@ -1,6 +1,8 @@
 ///////////////////////////////////////////////////////////
 ////////////////// JAVASCRIPT BEGINS HERE /////////////////
 
+const purpleApiKey = "replace me with real key";
+
 ///////////////////////////////////////////////////////////
 $(document).ready(function () {
   // Chart initialization code
@@ -199,11 +201,14 @@ $(document).ready(function () {
         method: "GET",
         //dataType: "json",
         headers: {
-          "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123"
+          "X-API-Key": purpleApiKey,
         },
         success: function (result) {
           addDataPoint(result, ajaxTempData, ajaxTempChart);
-          console.log("Temperature result received:", result.sensor.temperature);
+          console.log(
+            "Temperature result received:",
+            result.sensor.temperature,
+          );
           updateRecords(ajaxTemp, result.sensor.temperature);
           // Fill in the body of the success function
         },
@@ -218,7 +223,7 @@ $(document).ready(function () {
     var socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = function (event) {
       var result = JSON.parse(event.data);
-      if (result){
+      if (result) {
         console.log("Got result!!");
       }
       addDataPoint(result, wsSimData, wsSimChart);
@@ -237,11 +242,13 @@ $(document).ready(function () {
         method: "GET",
         //dataType: "json",
         headers: {
-          "X-API-Key": "131A84F5-19A2-11F1-B596-4201AC1DC123"
+          "X-API-Key": purpleApiKey,
         },
         success: function (result) {
           addDataPoint(result, ajaxAirData, ajaxAirChart);
           console.log(result);
+          console.log(result.sensor);
+          console.log(result.sensor.sensor_index);
           console.log("Air quality result received:", result.sensor.pm2_5);
           updateRecords(ajaxAir, result.sensor.pm2_5);
           // Fill in the body of the success function
