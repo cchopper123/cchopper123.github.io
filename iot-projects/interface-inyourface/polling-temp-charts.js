@@ -144,37 +144,6 @@ $(document).ready(function () {
         record.lowest = value;
         $(`#${record.lowID}`).text(`Lowest recorded value is ${record.lowest}`);
       }
-      //console.log(object, highID, lowID);
-      // }
-      // function updateJSONRecords(value) {
-      //   if (value > jsonSim.highest) {
-      //     jsonSim.highest = value;
-      //     $("#json-sim-highest").text(`Highest recorded value is ${jsonSim.highest}`);
-      //   }
-      //   if (value < jsonSim.lowest) {
-      //     jsonSim.lowest = value;
-      //     $("#json-sim-lowest").text(`Lowest recorded value is ${jsonSim.lowest}`);
-      //   }
-      // // }
-      // function updateAjaxRecords(value) {
-      //   if (value > ajaxSim.highest) {
-      //     ajaxSim.highest = value;
-      //     $("#ajax-sim-highest").text(`Highest recorded value is ${ajaxSim.highest}`);
-      //   }
-      //   if (value < ajaxSim.lowest) {
-      //     ajaxSim.lowest = value;
-      //     $("#ajax-sim-lowest").text(`Lowest recorded value is ${ajaxSim.lowest}`);
-      //   }
-      // }
-      // function updateWSRecords(value) {
-      //   if (value > wsSim.highest) {
-      //     wsSim.highest = value;
-      //     $("#ws-sim-highest").text(`Highest recorded value is ${wsSim.highest}`);
-      //   }
-      //   if (value < wsSim.lowest) {
-      //     wsSim.lowest = value;
-      //     $("#ws-sim-lowest").text(`Lowest recorded value is ${wsSim.lowest}`);
-      //   }
     }
 
     // TODO 5: Regular JSON Polling
@@ -188,6 +157,7 @@ $(document).ready(function () {
         // addDataPoint(result, wsData, wsChart);
         // updateAjaxRecords(result.value);
         updateRecords(jsonSim, result.value);
+        
         // updateWSRecords(result.value);
       });
     }
@@ -204,6 +174,7 @@ $(document).ready(function () {
           "X-API-Key": purpleApiKey,
         },
         success: function (result) {
+          console.log("success!");
           addDataPoint(result, ajaxTempData, ajaxTempChart);
           console.log(
             "Temperature result received:",
