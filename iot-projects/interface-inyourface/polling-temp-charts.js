@@ -212,7 +212,7 @@ $(document).ready(function () {
 
     function doPurpleAirAJAXPollAir() {
       $.ajax({
-        url: "https://api.purpleair.com/v1/sensors/300625?fields=pm2.5",
+        url: "https://api.purpleair.com/v1/sensors/293473?fields=pm2.5_atm",
         method: "GET",
         //dataType: "json",
         headers: {
@@ -220,7 +220,7 @@ $(document).ready(function () {
         },
         success: function (result) {
           addDataPoint({
-            value:result.sensor.pm2_5}, 
+            value:result.sensor["pm2_5"]}, 
             ajaxAirData, 
             ajaxAirChart
           );
