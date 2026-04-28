@@ -174,8 +174,11 @@ $(document).ready(function () {
           "X-API-Key": purpleApiKey,
         },
         success: function (result) {
-          console.log("success!");
-          addDataPoint(result, ajaxTempData, ajaxTempChart);
+          addDataPoint(
+            { value: result.sensor.temperature}, 
+            ajaxTempData, 
+            ajaxTempChart
+          );
           console.log(
             "Temperature result received:",
             result.sensor.temperature,
@@ -216,10 +219,11 @@ $(document).ready(function () {
           "X-API-Key": purpleApiKey,
         },
         success: function (result) {
-          addDataPoint(result, ajaxAirData, ajaxAirChart);
-          console.log(result);
-          console.log(result.sensor);
-          console.log(result.sensor.sensor_index);
+          addDataPoint({
+            value:result.sensor.pm2_5}, 
+            ajaxAirData, 
+            ajaxAirChart
+          );
           console.log("Air quality result received:", result.sensor.pm2_5);
           updateRecords(ajaxAir, result.sensor.pm2_5);
           // Fill in the body of the success function
