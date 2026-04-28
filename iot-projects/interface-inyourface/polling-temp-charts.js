@@ -220,12 +220,12 @@ $(document).ready(function () {
         },
         success: function (result) {
           addDataPoint({
-            value:result.sensor["pm2_5"]}, 
+            value:result.sensor["pm2.5_atm"]}, 
             ajaxAirData, 
             ajaxAirChart
           );
-          console.log("Air quality result received:", result.sensor.pm2_5);
-          updateRecords(ajaxAir, result.sensor.pm2_5);
+          //console.log("Air quality result received:", result.sensor.pm2_5);
+          updateRecords(ajaxAir, result.sensor["pm2.5_atm"]);
           // Fill in the body of the success function
         },
         error: function (error) {
